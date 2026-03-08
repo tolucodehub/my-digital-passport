@@ -4,21 +4,21 @@ import avatarsGrid from "@/assets/avatars-grid.png";
 
 // row: 0-3 (4 rows), col: 0-6 (7 cols) matching generated avatar grid
 const testimonials = [
-  { name: "Michael R.", role: "Professional Trader", text: "The execution speed is unmatched. I've been trading for 12 years and this platform is the best I've used.", stars: 5, row: 0, col: 0 },
-  { name: "Sarah K.", role: "Day Trader", text: "The copy trading feature changed my life. I'm now consistently profitable following top traders.", stars: 5, row: 0, col: 1 },
-  { name: "James T.", role: "Portfolio Manager", text: "Institutional-grade tools with a retail-friendly interface. Outstanding platform.", stars: 5, row: 0, col: 2 },
-  { name: "Linda W.", role: "Swing Trader", text: "Spreads are incredibly tight. I've saved thousands in trading costs compared to my previous broker.", stars: 5, row: 0, col: 3 },
-  { name: "David O.", role: "Crypto Trader", text: "The charting tools are world-class. Technical analysis has never been easier or more accurate.", stars: 5, row: 0, col: 4 },
-  { name: "Emmanuel A.", role: "Forex Analyst", text: "Customer support is phenomenal. Any issue gets resolved within minutes, not hours.", stars: 5, row: 1, col: 0 },
-  { name: "Carlos M.", role: "Scalper", text: "Zero slippage on major pairs. This is the real deal for high-frequency trading strategies.", stars: 5, row: 1, col: 1 },
-  { name: "Maria G.", role: "Investment Advisor", text: "I recommend PocketBroker to all my clients. The platform is intuitive and the education resources are top-notch.", stars: 5, row: 1, col: 2 },
-  { name: "Raj P.", role: "Options Trader", text: "The mobile app is just as powerful as the desktop version. I can trade anywhere, anytime.", stars: 4, row: 1, col: 3 },
-  { name: "Priya S.", role: "Algorithmic Trader", text: "API integration was seamless. My bots are running 24/7 with zero downtime.", stars: 5, row: 1, col: 4 },
-  { name: "Robert J.", role: "Retired Investor", text: "Even as a beginner, I felt supported every step of the way. Great educational materials.", stars: 5, row: 2, col: 0 },
-  { name: "Ana L.", role: "Commodity Trader", text: "Gold and oil trading spreads are the lowest I've seen. Execution is instant.", stars: 5, row: 2, col: 1 },
-  { name: "Sophie B.", role: "Fund Manager", text: "Managing multiple portfolios is effortless. The dashboard gives me everything at a glance.", stars: 5, row: 2, col: 2 },
-  { name: "Marcus D.", role: "Position Trader", text: "Withdrawal processing is lightning fast. Had my funds within 2 hours every single time.", stars: 4, row: 2, col: 3 },
-  { name: "Tony W.", role: "Index Trader", text: "The social trading community is amazing. Learning from experienced traders accelerated my growth.", stars: 5, row: 3, col: 0 },
+  { name: "Michael R.", role: "Teacher", text: "The platform is incredibly easy to use. I've been learning to trade in my spare time.", stars: 5, row: 0, col: 0 },
+  { name: "Sarah K.", role: "Nurse", text: "The copy trading feature changed my life. I'm making extra income while working long shifts.", stars: 5, row: 0, col: 1 },
+  { name: "James T.", role: "Retired Soldier", text: "Great tools with a friendly interface. Support team is always helpful.", stars: 5, row: 0, col: 2 },
+  { name: "Linda W.", role: "Cleaner", text: "I started small, and the low costs really helped me grow my account over time.", stars: 5, row: 0, col: 3 },
+  { name: "David O.", role: "Uber Driver", text: "The mobile app is perfect. I can manage my trades while waiting for my next ride.", stars: 5, row: 0, col: 4 },
+  { name: "Emmanuel A.", role: "Construction Worker", text: "Customer support is phenomenal. Any issue gets resolved quickly.", stars: 5, row: 1, col: 0 },
+  { name: "Carlos M.", role: "Mechanic", text: "Fast execution on my trades. I've recommended it to all my friends.", stars: 5, row: 1, col: 1 },
+  { name: "Maria G.", role: "Stay-at-home Mom", text: "I love the educational resources. It made getting started so much easier.", stars: 5, row: 1, col: 2 },
+  { name: "Raj P.", role: "Student", text: "The minimum deposit was perfect for my budget. Learning a lot!", stars: 4, row: 1, col: 3 },
+  { name: "Priya S.", role: "Retail Worker", text: "Very reliable platform. My withdrawals are always processed quickly.", stars: 5, row: 1, col: 4 },
+  { name: "Robert J.", role: "Trader", text: "Even as a beginner, I felt supported every step of the way.", stars: 5, row: 2, col: 0 },
+  { name: "Ana L.", role: "Chef", text: "Trading gold has been great. The spreads are very fair.", stars: 5, row: 2, col: 1 },
+  { name: "Sophie B.", role: "Freelancer", text: "Managing my trades is effortless. The dashboard gives me everything at a glance.", stars: 5, row: 2, col: 2 },
+  { name: "Marcus D.", role: "Electrician", text: "Withdrawal processing is lightning fast. Had my funds quickly every single time.", stars: 4, row: 2, col: 3 },
+  { name: "Tony W.", role: "Delivery Driver", text: "The social trading community is amazing. Learning from others accelerated my growth.", stars: 5, row: 3, col: 0 },
 ];
 
 // Grid has ~7 cols × 4 rows. backgroundSize zooms so one cell fills the 40×40 circle.
