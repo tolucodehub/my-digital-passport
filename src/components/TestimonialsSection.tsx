@@ -1,8 +1,8 @@
-import { motion, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import { useEffect, useRef } from "react";
 import avatarsGrid from "@/assets/avatars-grid.png";
 
+// row: 0-3 (4 rows), col: 0-6 (7 cols) matching generated avatar grid
 const testimonials = [
   { name: "Michael R.", role: "Professional Trader", text: "The execution speed is unmatched. I've been trading for 12 years and this platform is the best I've used.", stars: 5, row: 0, col: 0 },
   { name: "Sarah K.", role: "Day Trader", text: "The copy trading feature changed my life. I'm now consistently profitable following top traders.", stars: 5, row: 0, col: 1 },
@@ -18,18 +18,22 @@ const testimonials = [
   { name: "Ana L.", role: "Commodity Trader", text: "Gold and oil trading spreads are the lowest I've seen. Execution is instant.", stars: 5, row: 2, col: 1 },
   { name: "Sophie B.", role: "Fund Manager", text: "Managing multiple portfolios is effortless. The dashboard gives me everything at a glance.", stars: 5, row: 2, col: 2 },
   { name: "Marcus D.", role: "Position Trader", text: "Withdrawal processing is lightning fast. Had my funds within 2 hours every single time.", stars: 4, row: 2, col: 3 },
-  { name: "Tony W.", role: "Index Trader", text: "The social trading community is amazing. Learning from experienced traders accelerated my growth.", stars: 5, row: 2, col: 4 },
+  { name: "Tony W.", role: "Index Trader", text: "The social trading community is amazing. Learning from experienced traders accelerated my growth.", stars: 5, row: 3, col: 0 },
 ];
 
+// Grid has ~7 cols × 4 rows. backgroundSize zooms so one cell fills the 40×40 circle.
 function AvatarFromGrid({ row, col }: { row: number; col: number }) {
+  const colPct = (col / 6) * 100;
+  const rowPct = (row / 3) * 100;
   return (
     <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
       <div
-        className="w-full h-full bg-no-repeat"
+        className="w-full h-full"
         style={{
           backgroundImage: `url(${avatarsGrid})`,
-          backgroundPosition: `${col * 25}% ${row * 50}%`,
-          backgroundSize: '500% 300%',
+          backgroundSize: "700% 400%",
+          backgroundPosition: `${colPct}% ${rowPct}%`,
+          backgroundRepeat: "no-repeat",
         }}
       />
     </div>
@@ -59,15 +63,14 @@ function TestimonialCard({ t }: { t: typeof testimonials[0] }) {
   );
 }
 
-function ScrollRow({ items, direction }: { items: typeof testimonials; direction: "left" | "right" }) {
+function ScrollRow({ items }: { items: typeof testimonials }) {
   const doubled = [...items, ...items];
-
   return (
     <div className="overflow-hidden py-2">
       <motion.div
         className="flex"
-        animate={{ x: direction === "left" ? [0, -(items.length * 366)] : [-(items.length * 366), 0] }}
-        transition={{ duration: items.length * 8, repeat: Infinity, ease: "linear" }}
+        animate={{ x: [0, -(items.length * 366)] }}
+        transition={{ duration: items.length * 6, repeat: Infinity, ease: "linear" }}
       >
         {doubled.map((t, i) => (
           <TestimonialCard key={`${t.name}-${i}`} t={t} />
@@ -78,10 +81,6 @@ function ScrollRow({ items, direction }: { items: typeof testimonials; direction
 }
 
 export default function TestimonialsSection() {
-  const row1 = testimonials.slice(0, 5);
-  const row2 = testimonials.slice(5, 10);
-  const row3 = testimonials.slice(10, 15);
-
   return (
     <section id="testimonials" className="py-24 relative bg-secondary/50 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -101,10 +100,8 @@ export default function TestimonialsSection() {
         </motion.div>
       </div>
 
-      {/* Auto-scrolling testimonials (Single Row) */}
-      <div className="space-y-4">
-        <ScrollRow items={testimonials} direction="left" />
-      </div>
+      {/* Single auto-scrolling row */}
+      <ScrollRow items={testimonials} />
     </section>
   );
 }
