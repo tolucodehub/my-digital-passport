@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Shield, Globe, Zap, BarChart3, Users, ArrowRight, Star, ChevronRight } from "lucide-react";
+import { TrendingUp, Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight } from "lucide-react";
 import traderHero from "@/assets/trader-hero.png";
 import devicesShowcase from "@/assets/devices-showcase.png";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -34,12 +37,6 @@ const stats = [
   { value: "99.9%", label: "Uptime" },
 ];
 
-const testimonials = [
-  { name: "Michael R.", role: "Professional Trader", text: "The execution speed is unmatched. I've been trading for 12 years and this platform is the best I've used.", stars: 5 },
-  { name: "Sarah K.", role: "Day Trader", text: "The copy trading feature changed my life. I'm now consistently profitable following top traders.", stars: 5 },
-  { name: "James T.", role: "Portfolio Manager", text: "Institutional-grade tools with a retail-friendly interface. Outstanding platform.", stars: 5 },
-];
-
 const ticker = ["EUR/USD 1.0842 ▲", "GBP/USD 1.2715 ▼", "USD/JPY 149.32 ▲", "XAU/USD 2,341.50 ▲", "BTC/USD 67,240 ▲", "ETH/USD 3,520 ▼", "USD/CAD 1.3621 ▼", "AUD/USD 0.6542 ▲"];
 
 export default function LandingPage() {
@@ -65,6 +62,7 @@ export default function LandingPage() {
             <a href="#features" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Features</a>
             <a href="#stats" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Markets</a>
             <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Testimonials</a>
+            <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">FAQ</a>
           </div>
           <Link to="/register">
             <Button variant="hero" size="lg">
@@ -78,9 +76,7 @@ export default function LandingPage() {
       <div className="fixed top-[72px] left-0 right-0 z-40 bg-secondary/80 backdrop-blur-sm border-b border-border/30 overflow-hidden py-2">
         <div className="animate-ticker flex whitespace-nowrap gap-8">
           {[...ticker, ...ticker].map((item, i) => (
-            <span key={i} className="text-xs font-body text-muted-foreground font-medium">
-              {item}
-            </span>
+            <span key={i} className="text-xs font-body text-muted-foreground font-medium">{item}</span>
           ))}
         </div>
       </div>
@@ -88,7 +84,6 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center pt-32">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
-        {/* Decorative blobs */}
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
           transition={{ duration: 8, repeat: Infinity }}
@@ -102,11 +97,7 @@ export default function LandingPage() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={stagger}
-            >
+            <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6 border border-primary/20">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
@@ -129,17 +120,13 @@ export default function LandingPage() {
               </motion.div>
             </motion.div>
 
-            {/* Hero Image */}
             <motion.div
               initial={{ opacity: 0, x: 60, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="hidden lg:block relative"
             >
-              <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
                 <img src={traderHero} alt="Trader using mobile phone with stock charts" className="w-full max-w-lg mx-auto drop-shadow-2xl" />
               </motion.div>
             </motion.div>
@@ -201,9 +188,10 @@ export default function LandingPage() {
                 key={f.title}
                 variants={fadeInUp}
                 custom={i}
-                className="bg-card rounded-2xl p-8 group shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500 cursor-default"
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="bg-card rounded-2xl p-8 group shadow-sm border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-500 cursor-default"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <f.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-display font-semibold mb-3 text-foreground">{f.title}</h3>
@@ -214,64 +202,41 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials" className="py-24 relative bg-secondary/50">
+      {/* Devices Showcase */}
+      <section className="py-16 relative">
         <div className="container mx-auto px-6">
-          {/* Devices Showcase */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
+            transition={{ duration: 0.9 }}
           >
-            <img
+            <motion.h2
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-display font-bold mb-10 text-center text-foreground"
+            >
+              Trade on <span className="text-gradient-blue">Any Device</span>
+            </motion.h2>
+            <motion.img
               src={devicesShowcase}
               alt="PocketBroker platform on mobile, tablet, and desktop"
-              className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg"
+              className="w-full max-w-5xl mx-auto rounded-2xl shadow-2xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
             />
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={stagger}
-            className="text-center mb-16"
-          >
-            <motion.h2 variants={fadeInUp} custom={0} className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
-              Trusted by <span className="text-gradient-blue">Traders</span>
-            </motion.h2>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={stagger}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                variants={fadeInUp}
-                custom={i}
-                className="bg-card rounded-2xl p-8 shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500"
-              >
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: t.stars }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                <p className="text-foreground/70 font-body text-sm mb-6 leading-relaxed italic">"{t.text}"</p>
-                <div>
-                  <div className="font-display font-semibold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground font-body">{t.role}</div>
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
+
+      {/* FAQ */}
+      <div id="faq">
+        <FAQSection />
+      </div>
 
       {/* CTA */}
       <section className="py-24 relative">
@@ -302,22 +267,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 py-12 bg-card">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded bg-gradient-blue flex items-center justify-center">
-                <TrendingUp className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="font-display text-sm font-bold text-foreground">PocketBroker</span>
-            </div>
-            <p className="text-xs text-muted-foreground font-body text-center max-w-xl">
-              Trading involves significant risk. Past performance is not indicative of future results. Please trade responsibly.
-            </p>
-            <p className="text-xs text-muted-foreground font-body">© 2026 PocketBroker. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
