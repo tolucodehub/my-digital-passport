@@ -101,11 +101,9 @@ export default function TestimonialsSection() {
         </motion.div>
       </div>
 
-      {/* Auto-scrolling testimonials */}
+      {/* Auto-scrolling testimonials (Single Row) */}
       <div className="space-y-4">
-        <ScrollRow items={row1} direction="left" />
-        <ScrollRow items={row2} direction="right" />
-        <ScrollRow items={row3} direction="left" />
+        <ScrollRow items={testimonials} direction="left" />
       </div>
     </section>
   );
