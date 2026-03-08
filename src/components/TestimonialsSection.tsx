@@ -25,7 +25,7 @@ function AvatarFromGrid({ row, col }: { row: number; col: number }) {
   return (
     <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
       <div
-        className="w-[200%] h-[300%] bg-cover bg-no-repeat"
+        className="w-full h-full bg-no-repeat"
         style={{
           backgroundImage: `url(${avatarsGrid})`,
           backgroundPosition: `${col * 25}% ${row * 50}%`,
