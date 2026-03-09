@@ -39,8 +39,8 @@ export default function Footer() {
               The world's most-referenced price-tracking website for crypto assets. Track prices, market cap, and more.
             </p>
             <div className="space-y-3">
-              <a href="mailto:support@pocketbroker.com" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
-                <Mail className="w-4 h-4" /> support@pocketbroker.com
+              <a href="mailto:support@coinmarketcap.com" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
+                <Mail className="w-4 h-4" /> support@coinmarketcap.com
               </a>
               <a href="tel:+18001234567" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
                 <Phone className="w-4 h-4" /> +1 (800) 123-4567
