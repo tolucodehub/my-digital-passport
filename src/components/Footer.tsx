@@ -4,7 +4,7 @@ import cmcLogo from "@/assets/cmc-logo.png";
 import { Link } from "react-router-dom";
 
 const footerLinks = {
-  Trading: ["Forex", "Commodities", "Indices", "Cryptocurrencies", "CFDs", "Stocks"],
+  Trading: ["Bitcoin", "Ethereum", "DeFi", "NFTs", "Exchanges", "Watchlist"],
   Company: ["About Us", "Careers", "Press", "Partners", "Contact"],
   Resources: ["Education Center", "Market Analysis", "Trading Tools", "API Documentation", "Blog"],
   Legal: ["Terms of Service", "Privacy Policy", "Risk Disclosure", "AML Policy", "Cookie Policy"],
