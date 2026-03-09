@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "What instruments can I trade?",
-    a: "PocketBroker offers 200+ instruments including Forex pairs, CFDs on stocks, commodities (gold, oil, silver), indices (S&P 500, NASDAQ), and popular cryptocurrencies — all from a single account.",
+    a: "CoinMarketCap offers 200+ instruments including Forex pairs, CFDs on stocks, commodities (gold, oil, silver), indices (S&P 500, NASDAQ), and popular cryptocurrencies — all from a single account.",
   },
   {
     q: "How fast are withdrawals processed?",
