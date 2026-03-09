@@ -5,9 +5,7 @@ import {
   UserCheck, Star, TrendingUp, Award,
   MousePointerClick, FlaskConical, BookOpen, BarChart2, Wallet, ArrowRight, CheckCircle2
 } from "lucide-react";
-import socialChart from "@/assets/social-chart.png";
-import socialLeaderboard from "@/assets/social-leaderboard.png";
-import socialCopy from "@/assets/social-copy.png";
+import socialComposite from "@/assets/social-trading-composite.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -115,7 +113,7 @@ export default function SocialTradingSection() {
           {/* Main Content: Images + Steps side-by-side */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left — Stacked phone mockups */}
+            {/* Left — Composite phone mockup */}
             <motion.div
               initial={{ opacity: 0, x: -60 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -126,37 +124,14 @@ export default function SocialTradingSection() {
               {/* Glow backdrop */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl blur-2xl" />
 
-              <div className="relative w-full max-w-md mx-auto">
-                {/* Background card — leaderboard */}
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -top-6 -right-6 w-56 rounded-2xl overflow-hidden shadow-2xl border border-border/40 z-10"
-                  style={{ filter: "drop-shadow(0 20px 40px hsla(205,85%,50%,0.25))" }}
-                >
-                  <img src={socialLeaderboard} alt="Trader leaderboard" className="w-full object-cover" />
-                </motion.div>
-
-                {/* Copy popup — bottom left */}
-                <motion.div
-                  animate={{ y: [0, 8, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-6 -left-4 w-36 rounded-2xl overflow-hidden shadow-2xl border border-border/40 z-10"
-                  style={{ filter: "drop-shadow(0 20px 40px hsla(205,85%,50%,0.2))" }}
-                >
-                  <img src={socialCopy} alt="Copy trader popup" className="w-full object-cover" />
-                </motion.div>
-
-                {/* Main phone — front center */}
-                <motion.div
-                  animate={{ y: [0, -12, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative z-20 mx-auto w-64"
-                  style={{ filter: "drop-shadow(0 30px 60px hsla(205,85%,50%,0.3))" }}
-                >
-                  <img src={socialChart} alt="Trading chart on mobile" className="w-full rounded-3xl" />
-                </motion.div>
-              </div>
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                className="relative w-full max-w-md mx-auto"
+                style={{ filter: "drop-shadow(0 40px 80px hsla(205,85%,50%,0.35))" }}
+              >
+                <img src={socialComposite} alt="Social trading app showcase" className="w-full object-contain" />
+              </motion.div>
             </motion.div>
 
             {/* Right — 4 steps */}
