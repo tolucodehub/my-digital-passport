@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
+import SocialTradingSection from "@/components/SocialTradingSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -230,6 +231,9 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Social Trading + Easy Start */}
+      <SocialTradingSection />
 
       {/* Payments */}
       <PaymentSection />
