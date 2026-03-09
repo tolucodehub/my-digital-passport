@@ -7,6 +7,7 @@ import devicesShowcase from "@/assets/devices-showcase.png";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import PaymentSection from "@/components/PaymentSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -229,6 +230,9 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Payments */}
+      <PaymentSection />
 
       {/* Testimonials */}
       <TestimonialsSection />
