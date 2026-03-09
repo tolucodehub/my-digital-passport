@@ -265,7 +265,7 @@ export default function LandingPage() {
                 Ready to Start Trading?
               </h2>
               <p className="text-primary-foreground/80 font-body max-w-md mx-auto mb-10">
-                Join thousands of traders who trust PocketBroker. Open your account in minutes.
+                Join thousands of traders who trust CoinMarketCap. Open your account in minutes.
               </p>
               <Link to="/register">
                 <Button size="lg" className="text-base px-10 py-6 bg-card text-foreground hover:bg-card/90 font-semibold shadow-lg">
