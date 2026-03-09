@@ -231,6 +231,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Payments */}
+      <PaymentSection />
+
       {/* Testimonials */}
       <TestimonialsSection />
 
