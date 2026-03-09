@@ -126,10 +126,10 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: 60, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="hidden lg:block relative"
+              className="relative flex justify-center"
             >
               <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
-                <img src={traderHero} alt="Trader using mobile phone with stock charts" className="w-full max-w-lg mx-auto drop-shadow-2xl" />
+                <img src={traderHero} alt="Trader using mobile phone with stock charts" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl" />
               </motion.div>
             </motion.div>
           </div>
