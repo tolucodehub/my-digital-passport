@@ -55,11 +55,9 @@ export default function LandingPage() {
       >
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
             <span className="font-display text-xl font-bold text-foreground">
-              Pocket<span className="text-gradient-blue">Broker</span>
+              Coin<span className="text-gradient-blue">MarketCap</span>
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8">
