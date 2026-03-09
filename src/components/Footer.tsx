@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-background/60 font-body text-sm leading-relaxed mb-6 max-w-xs">
-              Your trusted partner in global financial markets. Trade with confidence using institutional-grade technology.
+              The world's most-referenced price-tracking website for crypto assets. Track prices, market cap, and more.
             </p>
             <div className="space-y-3">
               <a href="mailto:support@pocketbroker.com" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
