@@ -232,6 +232,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Crypto Market Table */}
+      <CryptoMarketTable />
+
       {/* Social Trading + Easy Start */}
       <SocialTradingSection />
 
