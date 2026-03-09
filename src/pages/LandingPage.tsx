@@ -172,7 +172,7 @@ export default function LandingPage() {
             className="text-center mb-16"
           >
             <motion.h2 variants={fadeInUp} custom={0} className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
-              Why Choose <span className="text-gradient-blue">PocketBroker</span>
+              Why Choose <span className="text-gradient-blue">CoinMarketCap</span>
             </motion.h2>
             <motion.p variants={fadeInUp} custom={1} className="text-muted-foreground font-body max-w-lg mx-auto">
               Everything you need to trade like a professional, all in one platform.
