@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight } from "lucide-react";
+import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp } from "lucide-react";
 import traderHero from "@/assets/trader-hero.png";
 import devicesShowcase from "@/assets/devices-showcase.png";
+import cmcLogo from "@/assets/cmc-logo.png";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
 import SocialTradingSection from "@/components/SocialTradingSection";
+import CryptoMarketTable from "@/components/CryptoMarketTable";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
