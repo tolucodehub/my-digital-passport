@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
             Trusted by <span className="text-gradient-blue">Traders</span>
           </h2>
           <p className="text-muted-foreground font-body max-w-lg mx-auto">
-            Join over 150,000 traders who rely on PocketBroker every day.
+            Join over 150,000 traders who rely on CoinMarketCap every day.
           </p>
         </motion.div>
       </div>

@@ -41,7 +41,7 @@ const stats = [
   { value: "99.9%", label: "Uptime" },
 ];
 
-const ticker = ["EUR/USD 1.0842 ▲", "GBP/USD 1.2715 ▼", "USD/JPY 149.32 ▲", "XAU/USD 2,341.50 ▲", "BTC/USD 67,240 ▲", "ETH/USD 3,520 ▼", "USD/CAD 1.3621 ▼", "AUD/USD 0.6542 ▲"];
+const ticker = ["BTC $68,240 ▲3.62%", "ETH $2,001 ▼3.01%", "BNB $636.85 ▼3.65%", "XRP $1.36 ▼1.43%", "SOL $185.67 ▼4.41%", "DOGE $0.0906 ▼1.34%", "ADA $0.2550 ▼1.68%", "DOT $4.32 ▲2.15%"];
 
 export default function LandingPage() {
   return (

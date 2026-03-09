@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Risk disclaimer */}
         <div className="border-t border-background/10 py-5">
           <p className="text-background/30 text-[11px] font-body leading-relaxed text-center max-w-4xl mx-auto">
-            <strong>Risk Warning:</strong> Trading Forex and CFDs involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose and should ensure that you fully understand the risks involved. Past performance is not indicative of future results. PocketBroker is licensed and regulated. Please read our full Risk Disclosure before trading.
+            <strong>Risk Warning:</strong> Cryptocurrency trading involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose. Past performance is not indicative of future results. CoinMarketCap provides information and does not constitute financial advice. Please do your own research.
           </p>
         </div>
       </div>
