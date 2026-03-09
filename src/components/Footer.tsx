@@ -30,11 +30,9 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img src={cmcLogo} alt="CoinMarketCap" className="w-9 h-9 rounded-lg object-contain" />
               <span className="font-display text-xl font-bold">
-                Pocket<span className="text-primary">Broker</span>
+                Coin<span className="text-primary">MarketCap</span>
               </span>
             </div>
             <p className="text-background/60 font-body text-sm leading-relaxed mb-6 max-w-xs">
