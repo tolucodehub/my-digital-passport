@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import cmcLogo from "@/assets/cmc-logo.png";
 import { Link } from "react-router-dom";
 
 const footerLinks = {
-  Trading: ["Forex", "Commodities", "Indices", "Cryptocurrencies", "CFDs", "Stocks"],
+  Trading: ["Bitcoin", "Ethereum", "DeFi", "NFTs", "Exchanges", "Watchlist"],
   Company: ["About Us", "Careers", "Press", "Partners", "Contact"],
   Resources: ["Education Center", "Market Analysis", "Trading Tools", "API Documentation", "Blog"],
   Legal: ["Terms of Service", "Privacy Policy", "Risk Disclosure", "AML Policy", "Cookie Policy"],
@@ -29,19 +30,17 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img src={cmcLogo} alt="CoinMarketCap" className="w-9 h-9 rounded-lg object-contain" />
               <span className="font-display text-xl font-bold">
-                Pocket<span className="text-primary">Broker</span>
+                Coin<span className="text-primary">MarketCap</span>
               </span>
             </div>
             <p className="text-background/60 font-body text-sm leading-relaxed mb-6 max-w-xs">
-              Your trusted partner in global financial markets. Trade with confidence using institutional-grade technology.
+              The world's most-referenced price-tracking website for crypto assets. Track prices, market cap, and more.
             </p>
             <div className="space-y-3">
-              <a href="mailto:support@pocketbroker.com" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
-                <Mail className="w-4 h-4" /> support@pocketbroker.com
+              <a href="mailto:support@coinmarketcap.com" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
+                <Mail className="w-4 h-4" /> support@coinmarketcap.com
               </a>
               <a href="tel:+18001234567" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
                 <Phone className="w-4 h-4" /> +1 (800) 123-4567
@@ -75,7 +74,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-background/40 text-xs font-body">
-            © 2026 PocketBroker. All rights reserved.
+            © 2026 CoinMarketCap. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {socials.map((s, i) => (
@@ -93,7 +92,7 @@ export default function Footer() {
         {/* Risk disclaimer */}
         <div className="border-t border-background/10 py-5">
           <p className="text-background/30 text-[11px] font-body leading-relaxed text-center max-w-4xl mx-auto">
-            <strong>Risk Warning:</strong> Trading Forex and CFDs involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose and should ensure that you fully understand the risks involved. Past performance is not indicative of future results. PocketBroker is licensed and regulated. Please read our full Risk Disclosure before trading.
+            <strong>Risk Warning:</strong> Cryptocurrency trading involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose. Past performance is not indicative of future results. CoinMarketCap provides information and does not constitute financial advice. Please do your own research.
           </p>
         </div>
       </div>

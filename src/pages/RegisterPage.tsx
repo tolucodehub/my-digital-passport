@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
+import cmcLogo from "@/assets/cmc-logo.png";
 import {
-  TrendingUp,
   Upload,
   X,
   ArrowRight,
@@ -134,11 +134,9 @@ export default function RegisterPage() {
           className="relative z-10 max-w-sm"
         >
           <Link to="/" className="flex items-center gap-2 mb-12">
-            <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center">
-              <TrendingUp className="w-6 h-6 text-primary-foreground" />
-            </div>
+            <img src={cmcLogo} alt="CoinMarketCap" className="w-10 h-10 rounded-lg object-contain" />
             <span className="font-display text-2xl font-bold text-foreground">
-              Pocket<span className="text-gradient-gold">Broker</span>
+              Coin<span className="text-gradient-gold">MarketCap</span>
             </span>
           </Link>
           <h2 className="text-4xl font-display font-bold mb-6 leading-tight">
@@ -174,11 +172,9 @@ export default function RegisterPage() {
         >
           <div className="lg:hidden flex items-center gap-2 mb-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-gold flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-primary-foreground" />
-              </div>
+              <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
               <span className="font-display text-xl font-bold text-foreground">
-                Pocket<span className="text-gradient-gold">Broker</span>
+                Coin<span className="text-gradient-gold">MarketCap</span>
               </span>
             </Link>
           </div>

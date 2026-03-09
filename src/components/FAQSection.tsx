@@ -12,12 +12,12 @@ const faqs = [
     a: "You can start trading with as little as $50. We accept bank transfers, credit/debit cards, and popular e-wallets. All deposits are processed instantly for most payment methods.",
   },
   {
-    q: "Is my money safe with PocketBroker?",
+    q: "Is my money safe with CoinMarketCap?",
     a: "Absolutely. Client funds are held in segregated accounts at tier-1 banks. We use military-grade encryption and are fully regulated. Your funds are protected up to $500,000 under our insurance policy.",
   },
   {
     q: "What instruments can I trade?",
-    a: "PocketBroker offers 200+ instruments including Forex pairs, CFDs on stocks, commodities (gold, oil, silver), indices (S&P 500, NASDAQ), and popular cryptocurrencies — all from a single account.",
+    a: "CoinMarketCap offers 200+ instruments including Forex pairs, CFDs on stocks, commodities (gold, oil, silver), indices (S&P 500, NASDAQ), and popular cryptocurrencies — all from a single account.",
   },
   {
     q: "How fast are withdrawals processed?",

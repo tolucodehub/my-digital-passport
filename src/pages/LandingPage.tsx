@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight } from "lucide-react";
+import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp } from "lucide-react";
 import traderHero from "@/assets/trader-hero.png";
 import devicesShowcase from "@/assets/devices-showcase.png";
+import cmcLogo from "@/assets/cmc-logo.png";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
 import SocialTradingSection from "@/components/SocialTradingSection";
+import CryptoMarketTable from "@/components/CryptoMarketTable";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -33,13 +35,13 @@ const features = [
 ];
 
 const stats = [
-  { value: "$2.5B+", label: "Daily Volume" },
-  { value: "150K+", label: "Active Traders" },
-  { value: "0.0", label: "Pips Spread" },
+  { value: "$2.35T", label: "Total Market Cap" },
+  { value: "37K+", label: "Cryptocurrencies" },
+  { value: "928", label: "Exchanges" },
   { value: "99.9%", label: "Uptime" },
 ];
 
-const ticker = ["EUR/USD 1.0842 ▲", "GBP/USD 1.2715 ▼", "USD/JPY 149.32 ▲", "XAU/USD 2,341.50 ▲", "BTC/USD 67,240 ▲", "ETH/USD 3,520 ▼", "USD/CAD 1.3621 ▼", "AUD/USD 0.6542 ▲"];
+const ticker = ["BTC $68,240 ▲3.62%", "ETH $2,001 ▼3.01%", "BNB $636.85 ▼3.65%", "XRP $1.36 ▼1.43%", "SOL $185.67 ▼4.41%", "DOGE $0.0906 ▼1.34%", "ADA $0.2550 ▼1.68%", "DOT $4.32 ▲2.15%"];
 
 export default function LandingPage() {
   return (
@@ -53,11 +55,9 @@ export default function LandingPage() {
       >
         <div className="container mx-auto flex items-center justify-between py-4 px-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-blue flex items-center justify-center">
-              <TrendingUp className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
             <span className="font-display text-xl font-bold text-foreground">
-              Pocket<span className="text-gradient-blue">Broker</span>
+              Coin<span className="text-gradient-blue">MarketCap</span>
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -105,10 +105,10 @@ export default function LandingPage() {
                 <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
               </motion.div>
               <motion.h1 variants={fadeInUp} custom={1} className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 text-foreground">
-                Trade the <span className="text-gradient-blue">World's</span> Markets with Confidence
+                Track & Trade <span className="text-gradient-blue">Crypto</span> with Confidence
               </motion.h1>
               <motion.p variants={fadeInUp} custom={2} className="text-lg md:text-xl text-muted-foreground font-body max-w-xl mb-10 leading-relaxed">
-                Access global financial markets with institutional-grade tools, ultra-low spreads, and lightning-fast execution.
+                Real-time prices, market cap rankings, and powerful trading tools for 10,000+ cryptocurrencies.
               </motion.p>
               <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-4">
                 <Link to="/register">
@@ -172,7 +172,7 @@ export default function LandingPage() {
             className="text-center mb-16"
           >
             <motion.h2 variants={fadeInUp} custom={0} className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
-              Why Choose <span className="text-gradient-blue">PocketBroker</span>
+              Why Choose <span className="text-gradient-blue">CoinMarketCap</span>
             </motion.h2>
             <motion.p variants={fadeInUp} custom={1} className="text-muted-foreground font-body max-w-lg mx-auto">
               Everything you need to trade like a professional, all in one platform.
@@ -232,6 +232,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Crypto Market Table */}
+      <CryptoMarketTable />
+
       {/* Social Trading + Easy Start */}
       <SocialTradingSection />
 
@@ -262,7 +265,7 @@ export default function LandingPage() {
                 Ready to Start Trading?
               </h2>
               <p className="text-primary-foreground/80 font-body max-w-md mx-auto mb-10">
-                Join thousands of traders who trust PocketBroker. Open your account in minutes.
+                Join thousands of traders who trust CoinMarketCap. Open your account in minutes.
               </p>
               <Link to="/register">
                 <Button size="lg" className="text-base px-10 py-6 bg-card text-foreground hover:bg-card/90 font-semibold shadow-lg">
