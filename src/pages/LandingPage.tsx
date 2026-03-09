@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
+import SocialTradingSection from "@/components/SocialTradingSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
