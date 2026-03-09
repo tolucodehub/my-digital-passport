@@ -232,6 +232,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Social Trading + Easy Start */}
+      <SocialTradingSection />
+
       {/* Payments */}
       <PaymentSection />
 
