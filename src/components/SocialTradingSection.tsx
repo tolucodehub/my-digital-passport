@@ -5,9 +5,7 @@ import {
   UserCheck, Star, TrendingUp, Award,
   MousePointerClick, FlaskConical, BookOpen, BarChart2, Wallet, ArrowRight, CheckCircle2
 } from "lucide-react";
-import socialChart from "@/assets/social-chart.png";
-import socialLeaderboard from "@/assets/social-leaderboard.png";
-import socialCopy from "@/assets/social-copy.png";
+import socialComposite from "@/assets/social-trading-composite.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
