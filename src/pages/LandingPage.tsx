@@ -35,9 +35,9 @@ const features = [
 ];
 
 const stats = [
-  { value: "$2.5B+", label: "Daily Volume" },
-  { value: "150K+", label: "Active Traders" },
-  { value: "0.0", label: "Pips Spread" },
+  { value: "$2.35T", label: "Total Market Cap" },
+  { value: "37K+", label: "Cryptocurrencies" },
+  { value: "928", label: "Exchanges" },
   { value: "99.9%", label: "Uptime" },
 ];
 
