@@ -105,10 +105,10 @@ export default function LandingPage() {
                 <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
               </motion.div>
               <motion.h1 variants={fadeInUp} custom={1} className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 text-foreground">
-                Trade the <span className="text-gradient-blue">World's</span> Markets with Confidence
+                Track & Trade <span className="text-gradient-blue">Crypto</span> with Confidence
               </motion.h1>
               <motion.p variants={fadeInUp} custom={2} className="text-lg md:text-xl text-muted-foreground font-body max-w-xl mb-10 leading-relaxed">
-                Access global financial markets with institutional-grade tools, ultra-low spreads, and lightning-fast execution.
+                Real-time prices, market cap rankings, and powerful trading tools for 10,000+ cryptocurrencies.
               </motion.p>
               <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-4">
                 <Link to="/register">
