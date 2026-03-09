@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import cmcLogo from "@/assets/cmc-logo.png";
 import { Link } from "react-router-dom";
 
 const footerLinks = {
