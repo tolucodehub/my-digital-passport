@@ -91,8 +91,8 @@ export default function Footer() {
         </div>
 
         {/* Risk disclaimer */}
-        <div className="border-t border-background/10 py-5">
-          <p className="text-background/30 text-[11px] font-body leading-relaxed text-center max-w-4xl mx-auto">
+        <div className="border-t border-border py-5">
+          <p className="text-muted-foreground text-[11px] font-body leading-relaxed text-center max-w-4xl mx-auto">
             <strong>Risk Warning:</strong> Cryptocurrency trading involves significant risk and can result in the loss of your invested capital. You should not invest more than you can afford to lose. Past performance is not indicative of future results. CoinMarketCap provides information and does not constitute financial advice. Please do your own research.
           </p>
         </div>
