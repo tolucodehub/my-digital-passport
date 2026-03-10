@@ -71,8 +71,8 @@ export default function LandingPage() {
             <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">FAQ</a>
           </div>
           <Link to="/register">
-            <Button variant="hero" size="lg">
-              Open Account <ArrowRight className="w-4 h-4" />
+            <Button variant="hero" size="sm" className="md:size-lg text-xs md:text-sm">
+              Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
             </Button>
           </Link>
         </div>
