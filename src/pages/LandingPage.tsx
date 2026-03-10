@@ -57,7 +57,7 @@ export default function LandingPage() {
         transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border/50 shadow-sm"
       >
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        <div className="container mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-6">
           <div className="flex items-center gap-2">
             <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
             <span className="font-display text-xl font-bold text-foreground">
