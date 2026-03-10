@@ -11,6 +11,10 @@ import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
 import SocialTradingSection from "@/components/SocialTradingSection";
 import CryptoMarketTable from "@/components/CryptoMarketTable";
+import PortfolioShowcase from "@/components/PortfolioShowcase";
+import WelcomeSection from "@/components/WelcomeSection";
+import PromoBanner from "@/components/PromoBanner";
+import TradingPlatformArticle from "@/components/TradingPlatformArticle";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -232,11 +236,23 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Welcome */}
+      <WelcomeSection />
+
+      {/* Promo Banner */}
+      <PromoBanner />
+
       {/* Crypto Market Table */}
       <CryptoMarketTable />
 
+      {/* Portfolio Showcase */}
+      <PortfolioShowcase />
+
       {/* Social Trading + Easy Start */}
       <SocialTradingSection />
+
+      {/* Trading Platform Article */}
+      <TradingPlatformArticle />
 
       {/* Payments */}
       <PaymentSection />
