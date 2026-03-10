@@ -88,7 +88,7 @@ export default function LandingPage() {
       </div>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-32">
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-28 md:pt-32 pb-10 md:pb-0">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
