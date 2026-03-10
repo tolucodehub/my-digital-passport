@@ -39,13 +39,13 @@ export default function Footer() {
               The world's most-referenced price-tracking website for crypto assets. Track prices, market cap, and more.
             </p>
             <div className="space-y-3">
-              <a href="mailto:support@coinmarketcap.com" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
+              <a href="mailto:support@coinmarketcap.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-body">
                 <Mail className="w-4 h-4" /> support@coinmarketcap.com
               </a>
-              <a href="tel:+18001234567" className="flex items-center gap-2 text-background/60 hover:text-primary transition-colors text-sm font-body">
+              <a href="tel:+18001234567" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-body">
                 <Phone className="w-4 h-4" /> +1 (800) 123-4567
               </a>
-              <div className="flex items-center gap-2 text-background/60 text-sm font-body">
+              <div className="flex items-center gap-2 text-muted-foreground text-sm font-body">
                 <MapPin className="w-4 h-4 flex-shrink-0" /> 388 Market St, Suite 1300, San Francisco, CA
               </div>
             </div>
