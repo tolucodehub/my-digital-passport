@@ -108,10 +108,10 @@ export default function LandingPage() {
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
               </motion.div>
-              <motion.h1 variants={fadeInUp} custom={1} className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 text-foreground">
+              <motion.h1 variants={fadeInUp} custom={1} className="text-3xl sm:text-5xl md:text-7xl font-display font-bold leading-tight mb-4 md:mb-6 text-foreground">
                 Track & Trade <span className="text-gradient-blue">Crypto</span> with Confidence
               </motion.h1>
-              <motion.p variants={fadeInUp} custom={2} className="text-lg md:text-xl text-muted-foreground font-body max-w-xl mb-10 leading-relaxed">
+              <motion.p variants={fadeInUp} custom={2} className="text-base md:text-xl text-muted-foreground font-body max-w-xl mb-6 md:mb-10 leading-relaxed">
                 Real-time prices, market cap rankings, and powerful trading tools for 10,000+ cryptocurrencies.
               </motion.p>
               <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-4">
