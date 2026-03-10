@@ -35,7 +35,7 @@ export default function Footer() {
                 Coin<span className="text-primary">MarketCap</span>
               </span>
             </div>
-            <p className="text-background/60 font-body text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6 max-w-xs">
               The world's most-referenced price-tracking website for crypto assets. Track prices, market cap, and more.
             </p>
             <div className="space-y-3">
