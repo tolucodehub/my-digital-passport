@@ -78,10 +78,11 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             {socials.map((s, i) => (
-              <a
-                key={i}
-                href={s.href}
-                className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                <a
+                  key={i}
+                  href={s.href}
+                  className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                >
               >
                 <s.icon className="w-3.5 h-3.5" />
               </a>
