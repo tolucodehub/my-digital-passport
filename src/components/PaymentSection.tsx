@@ -59,7 +59,7 @@ const ChaseLogo = () => (
         <path d="M4 20 L20 20 L20 36 Z" fill="white" opacity="0.5"/>
       </svg>
     </div>
-    <span className="font-bold text-xl tracking-wide" style={{ color: "#117ACA" }}>CHASE</span>
+    <span className="font-bold text-xl tracking-wide text-foreground">CHASE</span>
   </div>
 );
 
