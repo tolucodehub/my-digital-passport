@@ -236,11 +236,23 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Welcome */}
+      <WelcomeSection />
+
+      {/* Promo Banner */}
+      <PromoBanner />
+
       {/* Crypto Market Table */}
       <CryptoMarketTable />
 
+      {/* Portfolio Showcase */}
+      <PortfolioShowcase />
+
       {/* Social Trading + Easy Start */}
       <SocialTradingSection />
+
+      {/* Trading Platform Article */}
+      <TradingPlatformArticle />
 
       {/* Payments */}
       <PaymentSection />
