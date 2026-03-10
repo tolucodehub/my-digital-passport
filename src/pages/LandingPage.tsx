@@ -141,21 +141,21 @@ export default function LandingPage() {
       </section>
 
       {/* Stats */}
-      <section id="stats" className="py-20 relative">
-        <div className="container mx-auto px-6">
+      <section id="stats" className="py-12 md:py-20 relative">
+        <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6"
           >
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 variants={fadeInUp}
                 custom={i}
-                className="bg-card rounded-2xl p-8 text-center shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500"
+                className="bg-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500"
               >
                 <div className="text-3xl md:text-4xl font-display font-bold text-gradient-blue mb-2">{stat.value}</div>
                 <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
