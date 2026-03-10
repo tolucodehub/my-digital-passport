@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-background/40 text-xs font-body">
+          <p className="text-muted-foreground text-xs font-body">
             © 2026 CoinMarketCap. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
