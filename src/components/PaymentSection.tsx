@@ -45,7 +45,7 @@ const BofALogo = () => (
         <div key={i} className="w-2 rounded-sm" style={{ height: h, background: "linear-gradient(180deg, #E31837 0%, #c00020 100%)" }} />
       ))}
     </div>
-    <span className="font-bold text-[11px] tracking-tight leading-tight text-center" style={{ color: "#E31837" }}>Bank of America</span>
+    <span className="font-bold text-[11px] tracking-tight leading-tight text-center text-foreground">Bank of America</span>
   </div>
 );
 
