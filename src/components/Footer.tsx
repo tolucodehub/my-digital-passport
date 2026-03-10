@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-background/10" />
+        <div className="border-t border-border" />
 
         {/* Bottom bar */}
         <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
