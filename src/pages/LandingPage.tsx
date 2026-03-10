@@ -114,14 +114,14 @@ export default function LandingPage() {
               <motion.p variants={fadeInUp} custom={2} className="text-base md:text-xl text-muted-foreground font-body max-w-xl mb-6 md:mb-10 leading-relaxed">
                 Real-time prices, market cap rankings, and powerful trading tools for 10,000+ cryptocurrencies.
               </motion.p>
-              <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-3">
                 <Link to="/register">
-                  <Button variant="hero" size="lg" className="text-base px-8 py-6">
-                    Start Trading Now <ArrowRight className="w-5 h-5" />
+                  <Button variant="hero" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
+                    Start Trading Now <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </Button>
                 </Link>
-                <Button variant="heroOutline" size="lg" className="text-base px-8 py-6">
-                  View Markets <ChevronRight className="w-5 h-5" />
+                <Button variant="heroOutline" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
+                  View Markets <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
                 </Button>
               </motion.div>
             </motion.div>
