@@ -103,7 +103,7 @@ const MastercardLogo = () => (
       <div className="w-9 h-9 rounded-full" style={{ background: "#EB001B" }} />
       <div className="w-9 h-9 rounded-full -ml-3.5" style={{ background: "#F79E1B" }} />
     </div>
-    <span className="font-semibold text-sm text-foreground">mastercard</span>
+    <span className="font-semibold text-sm text-foreground/80">mastercard</span>
   </div>
 );
 
