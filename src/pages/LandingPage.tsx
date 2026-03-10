@@ -157,7 +157,7 @@ export default function LandingPage() {
                 custom={i}
                 className="bg-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500"
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient-blue mb-2">{stat.value}</div>
+                <div className="text-2xl md:text-4xl font-display font-bold text-gradient-blue mb-1 md:mb-2">{stat.value}</div>
                 <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
               </motion.div>
             ))}
