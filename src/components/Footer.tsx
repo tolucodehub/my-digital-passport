@@ -20,7 +20,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-foreground text-background relative overflow-hidden">
+    <footer className="bg-secondary text-foreground relative overflow-hidden">
       {/* Top gradient line */}
       <div className="h-1 bg-gradient-to-r from-primary via-accent to-primary" />
 
