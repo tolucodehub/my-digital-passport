@@ -111,7 +111,7 @@ export default function SocialTradingSection() {
           </motion.div>
 
           {/* Main Content: Images + Steps side-by-side */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
 
             {/* Left — Composite phone mockup */}
             <motion.div
