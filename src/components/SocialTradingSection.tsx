@@ -183,12 +183,12 @@ export default function SocialTradingSection() {
       </section>
 
       {/* ── An Easy Way to Start ── */}
-      <section className="py-28 relative overflow-hidden bg-secondary/40">
+      <section className="py-16 md:py-28 relative overflow-hidden bg-secondary/40">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/3 blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] rounded-full bg-primary/3 blur-3xl pointer-events-none" />
 
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6">
           {/* Header */}
           <motion.div
             initial="hidden"
