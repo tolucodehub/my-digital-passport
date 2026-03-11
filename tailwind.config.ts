@@ -96,6 +96,10 @@ export default {
           "0%": { opacity: "0", transform: "translateX(60px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        "scroll-portfolio": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-33.333%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
