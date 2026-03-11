@@ -102,7 +102,7 @@ export default function SocialTradingSection() {
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm text-primary font-body font-medium">Copy. Follow. Profit.</span>
             </motion.div>
-            <motion.h2 variants={fadeInUp} custom={1} className="text-4xl md:text-6xl font-display font-bold mb-5 text-foreground">
+            <motion.h2 variants={fadeInUp} custom={1} className="text-3xl md:text-6xl font-display font-bold mb-4 md:mb-5 text-foreground">
               Social <span className="text-gradient-blue">Trading</span>
             </motion.h2>
             <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground font-body max-w-xl mx-auto text-lg">
