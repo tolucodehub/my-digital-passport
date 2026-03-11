@@ -109,6 +109,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out forwards",
         "slide-in-left": "slide-in-left 0.8s ease-out forwards",
         "slide-in-right": "slide-in-right 0.8s ease-out forwards",
+        "scroll-portfolio": "scroll-portfolio 20s linear infinite",
       },
     },
   },
