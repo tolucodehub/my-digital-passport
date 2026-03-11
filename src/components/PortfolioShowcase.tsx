@@ -34,31 +34,33 @@ export default function PortfolioShowcase() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
-          {portfolios.map((p, i) => (
-            <motion.div
-              key={p.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="group relative"
-            >
-              <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500">
-                <img
-                  src={p.img}
-                  alt={`${p.name}'s portfolio showing ${p.balance}`}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-2 text-center">
-                <div className="text-xs font-display font-semibold text-foreground truncate">{p.name}</div>
-                <div className="text-xs text-primary font-bold">{p.balance}</div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Infinite scrolling carousel */}
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll-portfolio gap-4 w-max">
+            {[...portfolios, ...portfolios, ...portfolios].map((p, i) => (
+              <motion.div
+                key={`${p.name}-${i}`}
+                whileHover={{ y: -6, scale: 1.03, transition: { duration: 0.3 } }}
+                className="group relative flex-shrink-0 w-40 md:w-48"
+              >
+                <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500">
+                  <img
+                    src={p.img}
+                    alt={`${p.name}'s portfolio showing ${p.balance}`}
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-xs font-display font-semibold text-foreground truncate">{p.name}</div>
+                  <div className="text-xs text-primary font-bold">{p.balance}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          {/* Fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-secondary/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-secondary/50 to-transparent z-10 pointer-events-none" />
         </div>
       </div>
     </section>
