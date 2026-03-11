@@ -220,7 +220,7 @@ export default function SocialTradingSection() {
             {/* Connecting line (desktop) */}
             <div className="hidden lg:block absolute top-[52px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-8 relative z-10">
               {gettingStartedSteps.map((item, i) => (
                 <motion.div
                   key={item.title}
