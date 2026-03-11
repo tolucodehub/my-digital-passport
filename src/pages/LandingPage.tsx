@@ -102,7 +102,7 @@ export default function LandingPage() {
         />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid grid-cols-[1fr_auto] md:grid-cols-2 gap-4 md:gap-12 items-center">
+          <div className="grid grid-cols-[1fr_minmax(140px,200px)] md:grid-cols-2 gap-2 md:gap-12 items-center">
             <motion.div initial="hidden" animate="visible" variants={stagger} className="min-w-0">
               <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6 border border-primary/20">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
