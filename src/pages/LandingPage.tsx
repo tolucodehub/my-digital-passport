@@ -102,29 +102,29 @@ export default function LandingPage() {
         />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <motion.div initial="hidden" animate="visible" variants={stagger}>
+          <div className="grid grid-cols-[1fr_auto] md:grid-cols-2 gap-4 md:gap-12 items-center">
+            <motion.div initial="hidden" animate="visible" variants={stagger} className="min-w-0">
               <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6 border border-primary/20">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
+                <span className="text-xs md:text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders</span>
               </motion.div>
-              <motion.h1 variants={fadeInUp} custom={1} className="text-3xl sm:text-5xl md:text-7xl font-display font-bold leading-tight mb-4 md:mb-6 text-foreground">
+              <motion.h1 variants={fadeInUp} custom={1} className="text-2xl sm:text-5xl md:text-7xl font-display font-bold leading-tight mb-3 md:mb-6 text-foreground">
                 Premier <span className="text-gradient-blue">USDT</span> Trading
               </motion.h1>
-              <motion.p variants={fadeInUp} custom={2} className="text-base md:text-xl text-muted-foreground font-body max-w-xl mb-4 md:mb-6 leading-relaxed">
+              <motion.p variants={fadeInUp} custom={2} className="text-sm md:text-xl text-muted-foreground font-body max-w-xl mb-3 md:mb-6 leading-relaxed">
                 Welcome to our premier USDT trading, where your financial aspirations become our mission.
               </motion.p>
-              <motion.div variants={fadeInUp} custom={2.5} className="inline-flex items-center gap-2 bg-primary/15 rounded-xl px-4 py-2.5 mb-6 md:mb-10 border border-primary/30">
-                <span className="text-sm md:text-base text-primary font-body font-semibold">🎁 Register with promo code to receive <span className="text-accent font-bold">$99.9</span> bonus!</span>
+              <motion.div variants={fadeInUp} custom={2.5} className="inline-flex items-center gap-2 bg-primary/15 rounded-xl px-3 py-2 md:px-4 md:py-2.5 mb-4 md:mb-10 border border-primary/30">
+                <span className="text-xs md:text-base text-primary font-body font-semibold">🎁 Promo code: <span className="text-accent font-bold">$99.9</span> bonus!</span>
               </motion.div>
-              <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-3">
+              <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-2 md:gap-3">
                 <Link to="/register">
-                  <Button variant="hero" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
-                    Start Trading Now <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                  <Button variant="hero" size="lg" className="text-xs md:text-base px-4 py-4 md:px-8 md:py-6">
+                    Start Trading <ArrowRight className="w-3.5 h-3.5 md:w-5 md:h-5" />
                   </Button>
                 </Link>
-                <Button variant="heroOutline" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
-                  View Markets <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
+                <Button variant="heroOutline" size="lg" className="text-xs md:text-base px-4 py-4 md:px-8 md:py-6">
+                  Markets <ChevronRight className="w-3.5 h-3.5 md:w-5 md:h-5" />
                 </Button>
               </motion.div>
             </motion.div>
@@ -133,7 +133,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: 60, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="relative flex justify-center"
+              className="relative flex justify-center w-28 sm:w-48 md:w-full"
             >
               <motion.div animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
                 <img src={traderHero} alt="Trader using mobile phone with stock charts" className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl" />
