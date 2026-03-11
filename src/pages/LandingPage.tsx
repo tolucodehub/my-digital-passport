@@ -55,9 +55,9 @@ export default function LandingPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border/50 shadow-sm"
+        className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border/50 shadow-sm"
       >
-        <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        <div className="container mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-6">
           <div className="flex items-center gap-2">
             <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
             <span className="font-display text-xl font-bold text-foreground">
@@ -71,8 +71,8 @@ export default function LandingPage() {
             <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">FAQ</a>
           </div>
           <Link to="/register">
-            <Button variant="hero" size="lg">
-              Open Account <ArrowRight className="w-4 h-4" />
+            <Button variant="hero" size="sm" className="md:size-lg text-xs md:text-sm">
+              Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
             </Button>
           </Link>
         </div>
@@ -88,7 +88,7 @@ export default function LandingPage() {
       </div>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-32">
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-28 md:pt-32 pb-10 md:pb-0">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-background" />
         <motion.div
           animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }}
@@ -101,27 +101,27 @@ export default function LandingPage() {
           className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-accent/10 blur-3xl"
         />
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div initial="hidden" animate="visible" variants={stagger}>
-              <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6 border border-primary/20">
+              <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6 border border-primary/20">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
               </motion.div>
-              <motion.h1 variants={fadeInUp} custom={1} className="text-5xl md:text-7xl font-display font-bold leading-tight mb-6 text-foreground">
+              <motion.h1 variants={fadeInUp} custom={1} className="text-3xl sm:text-5xl md:text-7xl font-display font-bold leading-tight mb-4 md:mb-6 text-foreground">
                 Track & Trade <span className="text-gradient-blue">Crypto</span> with Confidence
               </motion.h1>
-              <motion.p variants={fadeInUp} custom={2} className="text-lg md:text-xl text-muted-foreground font-body max-w-xl mb-10 leading-relaxed">
+              <motion.p variants={fadeInUp} custom={2} className="text-base md:text-xl text-muted-foreground font-body max-w-xl mb-6 md:mb-10 leading-relaxed">
                 Real-time prices, market cap rankings, and powerful trading tools for 10,000+ cryptocurrencies.
               </motion.p>
-              <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-3">
                 <Link to="/register">
-                  <Button variant="hero" size="lg" className="text-base px-8 py-6">
-                    Start Trading Now <ArrowRight className="w-5 h-5" />
+                  <Button variant="hero" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
+                    Start Trading Now <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </Button>
                 </Link>
-                <Button variant="heroOutline" size="lg" className="text-base px-8 py-6">
-                  View Markets <ChevronRight className="w-5 h-5" />
+                <Button variant="heroOutline" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
+                  View Markets <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
                 </Button>
               </motion.div>
             </motion.div>
@@ -141,23 +141,23 @@ export default function LandingPage() {
       </section>
 
       {/* Stats */}
-      <section id="stats" className="py-20 relative">
-        <div className="container mx-auto px-6">
+      <section id="stats" className="py-12 md:py-20 relative">
+        <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6"
           >
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}
                 variants={fadeInUp}
                 custom={i}
-                className="bg-card rounded-2xl p-8 text-center shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500"
+                className="bg-card rounded-xl md:rounded-2xl p-4 md:p-8 text-center shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500"
               >
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient-blue mb-2">{stat.value}</div>
+                <div className="text-2xl md:text-4xl font-display font-bold text-gradient-blue mb-1 md:mb-2">{stat.value}</div>
                 <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
               </motion.div>
             ))}
@@ -166,8 +166,8 @@ export default function LandingPage() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-24 relative">
-        <div className="container mx-auto px-6">
+      <section id="features" className="py-16 md:py-24 relative">
+        <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"

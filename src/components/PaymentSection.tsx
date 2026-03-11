@@ -20,7 +20,7 @@ const PayPalLogo = () => (
       <path d="M35.9 12.9c-.1.4-.2.8-.2 1.2-1.9 9.7-8.3 13-16.5 13H15c-1 0-1.8.7-2 1.7L10.7 42l-.6 3.8c-.1.6.4 1.2 1 1.2h7c.9 0 1.6-.6 1.7-1.5l.1-.4 1.4-8.7.1-.5c.2-.9.9-1.5 1.7-1.5h1.1c7.1 0 12.7-2.9 14.3-11.2.7-3.5.3-6.4-1.6-8.3z" fill="#009cde"/>
       <path d="M34.2 12.4c-.3-.1-.6-.2-.9-.2-.3-.1-.7-.1-1-.2-1.3-.2-2.7-.3-4.2-.3H17.3c-.3 0-.6.1-.9.2-.7.4-1.1 1-1.2 1.8L13 28.8v.4c.2-1 1-1.7 2-1.7h4.2c8.2 0 14.6-3.3 16.5-13 .1-.4.1-.8.2-1.2-.5-.3-1-.6-1.7-.9z" fill="#012169"/>
     </svg>
-    <span className="font-bold text-lg" style={{ color: "#003087" }}>PayPal</span>
+    <span className="font-bold text-lg text-primary">PayPal</span>
   </div>
 );
 
@@ -45,7 +45,7 @@ const BofALogo = () => (
         <div key={i} className="w-2 rounded-sm" style={{ height: h, background: "linear-gradient(180deg, #E31837 0%, #c00020 100%)" }} />
       ))}
     </div>
-    <span className="font-bold text-[11px] tracking-tight leading-tight text-center" style={{ color: "#E31837" }}>Bank of America</span>
+    <span className="font-bold text-[11px] tracking-tight leading-tight text-center text-foreground">Bank of America</span>
   </div>
 );
 
@@ -59,7 +59,7 @@ const ChaseLogo = () => (
         <path d="M4 20 L20 20 L20 36 Z" fill="white" opacity="0.5"/>
       </svg>
     </div>
-    <span className="font-bold text-xl tracking-wide" style={{ color: "#117ACA" }}>CHASE</span>
+    <span className="font-bold text-xl tracking-wide text-foreground">CHASE</span>
   </div>
 );
 
@@ -92,7 +92,7 @@ const VenmoLogo = () => (
 // Visa
 const VisaLogo = () => (
   <svg viewBox="0 0 80 26" className="h-7 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M29 1L18.8 25H12.3L7.4 6.2C7.1 5 6.8 4.5 6 4C4.7 3.3 2.5 2.7.6 2.3L.7 1H11.3c1.4 0 2.6 1 2.9 2.7L17 17.5 23 1H29zm25 16.2c0-5.9-8.1-6.2-8-8.8 0-.8.8-1.6 2.5-1.8 1-.1 3.9.2 7.2 1.8L56.4 2C54.6 1.3 52.4.8 49.7.8 43.7.8 39.6 4 39.6 8.6c0 3.4 3 5.3 5.3 6.4 2.3 1.1 3.1 1.9 3.1 2.9 0 1.6-1.9 2.3-3.6 2.3-3.1 0-4.8-.8-6.2-1.4L37.5 24c1.4.6 4 1.3 6.7 1.3 6.3 0 10.4-3.1 10.4-8l.4.9zM74 25h5.8L74.4 1h-5.4c-1.2 0-2.2.7-2.6 1.8L57.5 25h6.3l1.3-3.5h7.7L74 25zm-6.7-8.4l3.2-8.6 1.8 8.6h-5zM38 1l-5 24H27l5-24h6z" fill="#1A1F71"/>
+    <path d="M29 1L18.8 25H12.3L7.4 6.2C7.1 5 6.8 4.5 6 4C4.7 3.3 2.5 2.7.6 2.3L.7 1H11.3c1.4 0 2.6 1 2.9 2.7L17 17.5 23 1H29zm25 16.2c0-5.9-8.1-6.2-8-8.8 0-.8.8-1.6 2.5-1.8 1-.1 3.9.2 7.2 1.8L56.4 2C54.6 1.3 52.4.8 49.7.8 43.7.8 39.6 4 39.6 8.6c0 3.4 3 5.3 5.3 6.4 2.3 1.1 3.1 1.9 3.1 2.9 0 1.6-1.9 2.3-3.6 2.3-3.1 0-4.8-.8-6.2-1.4L37.5 24c1.4.6 4 1.3 6.7 1.3 6.3 0 10.4-3.1 10.4-8l.4.9zM74 25h5.8L74.4 1h-5.4c-1.2 0-2.2.7-2.6 1.8L57.5 25h6.3l1.3-3.5h7.7L74 25zm-6.7-8.4l3.2-8.6 1.8 8.6h-5zM38 1l-5 24H27l5-24h6z" fill="currentColor"/>
   </svg>
 );
 
@@ -103,7 +103,7 @@ const MastercardLogo = () => (
       <div className="w-9 h-9 rounded-full" style={{ background: "#EB001B" }} />
       <div className="w-9 h-9 rounded-full -ml-3.5" style={{ background: "#F79E1B" }} />
     </div>
-    <span className="font-semibold text-sm text-foreground">mastercard</span>
+    <span className="font-semibold text-sm text-foreground/80">mastercard</span>
   </div>
 );
 
@@ -154,7 +154,7 @@ const features = [
 
 export default function PaymentSection() {
   return (
-    <section className="py-28 relative overflow-hidden">
+    <section className="py-16 md:py-28 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/20" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
