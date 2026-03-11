@@ -201,7 +201,7 @@ export default function SocialTradingSection() {
               <CheckCircle2 className="w-4 h-4 text-primary" />
               <span className="text-sm text-primary font-body font-medium">Simple. Fast. Rewarding.</span>
             </motion.div>
-            <motion.h2 variants={fadeInUp} custom={1} className="text-4xl md:text-6xl font-display font-bold mb-5 text-foreground">
+            <motion.h2 variants={fadeInUp} custom={1} className="text-3xl md:text-6xl font-display font-bold mb-4 md:mb-5 text-foreground">
               An Easy Way to <span className="text-gradient-blue">Start</span>
             </motion.h2>
             <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground font-body max-w-xl mx-auto text-lg">
