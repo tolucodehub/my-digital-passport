@@ -109,11 +109,14 @@ export default function LandingPage() {
                 <span className="text-sm text-primary font-body font-medium">Trusted by 150,000+ Traders Worldwide</span>
               </motion.div>
               <motion.h1 variants={fadeInUp} custom={1} className="text-3xl sm:text-5xl md:text-7xl font-display font-bold leading-tight mb-4 md:mb-6 text-foreground">
-                Track & Trade <span className="text-gradient-blue">Crypto</span> with Confidence
+                Premier <span className="text-gradient-blue">USDT</span> Trading
               </motion.h1>
-              <motion.p variants={fadeInUp} custom={2} className="text-base md:text-xl text-muted-foreground font-body max-w-xl mb-6 md:mb-10 leading-relaxed">
-                Real-time prices, market cap rankings, and powerful trading tools for 10,000+ cryptocurrencies.
+              <motion.p variants={fadeInUp} custom={2} className="text-base md:text-xl text-muted-foreground font-body max-w-xl mb-4 md:mb-6 leading-relaxed">
+                Welcome to our premier USDT trading, where your financial aspirations become our mission.
               </motion.p>
+              <motion.div variants={fadeInUp} custom={2.5} className="inline-flex items-center gap-2 bg-primary/15 rounded-xl px-4 py-2.5 mb-6 md:mb-10 border border-primary/30">
+                <span className="text-sm md:text-base text-primary font-body font-semibold">🎁 Register with promo code to receive <span className="text-accent font-bold">$99.9</span> bonus!</span>
+              </motion.div>
               <motion.div variants={fadeInUp} custom={3} className="flex flex-wrap gap-3">
                 <Link to="/register">
                   <Button variant="hero" size="lg" className="text-sm md:text-base px-6 py-5 md:px-8 md:py-6">
