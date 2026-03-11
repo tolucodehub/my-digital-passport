@@ -84,12 +84,12 @@ export default function SocialTradingSection() {
   return (
     <>
       {/* ── Social Trading Section ── */}
-      <section className="py-28 relative overflow-hidden">
+      <section className="py-16 md:py-28 relative overflow-hidden">
         {/* Background blobs */}
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-40 -right-40 w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-accent/5 blur-3xl pointer-events-none" />
 
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6">
           {/* Header */}
           <motion.div
             initial="hidden"
