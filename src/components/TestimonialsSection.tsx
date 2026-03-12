@@ -42,7 +42,7 @@ function AvatarFromGrid({ row, col }: { row: number; col: number }) {
 
 function TestimonialCard({ t }: { t: typeof testimonials[0] }) {
   return (
-    <div className="bg-card rounded-2xl p-6 shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500 w-[340px] flex-shrink-0 mx-3">
+    <div className="bg-card rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500 w-[280px] md:w-[340px] flex-shrink-0 mx-2 md:mx-3">
       <div className="flex gap-1 mb-3">
         {Array.from({ length: t.stars }).map((_, j) => (
           <Star key={j} className="w-3.5 h-3.5 fill-primary text-primary" />
