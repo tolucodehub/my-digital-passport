@@ -15,6 +15,7 @@ import PortfolioShowcase from "@/components/PortfolioShowcase";
 import WelcomeSection from "@/components/WelcomeSection";
 import PromoBanner from "@/components/PromoBanner";
 import TradingPlatformArticle from "@/components/TradingPlatformArticle";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
