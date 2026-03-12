@@ -278,8 +278,8 @@ export default function LandingPage() {
       {/* Portfolio Showcase */}
       <PortfolioShowcase />
 
-      {/* Social Trading + Easy Start */}
-      <SocialTradingSection />
+      {/* Easy Start */}
+      <EasyStartSection />
 
       {/* Trading Platform Article */}
       <TradingPlatformArticle />
