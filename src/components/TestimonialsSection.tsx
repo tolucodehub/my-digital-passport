@@ -42,7 +42,7 @@ function AvatarFromGrid({ row, col }: { row: number; col: number }) {
 
 function TestimonialCard({ t }: { t: typeof testimonials[0] }) {
   return (
-    <div className="bg-card rounded-2xl p-6 shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500 w-[340px] flex-shrink-0 mx-3">
+    <div className="bg-card rounded-xl md:rounded-2xl p-4 md:p-6 shadow-sm border border-border/50 hover:shadow-lg hover:border-primary/20 transition-all duration-500 w-[280px] md:w-[340px] flex-shrink-0 mx-2 md:mx-3">
       <div className="flex gap-1 mb-3">
         {Array.from({ length: t.stars }).map((_, j) => (
           <Star key={j} className="w-3.5 h-3.5 fill-primary text-primary" />
@@ -82,19 +82,19 @@ function ScrollRow({ items }: { items: typeof testimonials }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 relative bg-secondary/50 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section id="testimonials" className="py-12 md:py-24 relative bg-secondary/50 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="text-center mb-8 md:mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+          <h2 className="text-2xl md:text-5xl font-display font-bold mb-3 md:mb-4 text-foreground">
             Trusted by <span className="text-gradient-blue">Traders</span>
           </h2>
-          <p className="text-muted-foreground font-body max-w-lg mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground font-body max-w-lg mx-auto">
             Join over 150,000 traders who rely on CoinMarketCap every day.
           </p>
         </motion.div>

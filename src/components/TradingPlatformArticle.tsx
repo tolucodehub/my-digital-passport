@@ -11,8 +11,8 @@ const features = [
 
 export default function TradingPlatformArticle() {
   return (
-    <section className="py-24 relative bg-secondary/30">
-      <div className="container mx-auto px-6 max-w-5xl">
+    <section className="py-12 md:py-24 relative bg-secondary/30">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,10 +20,10 @@ export default function TradingPlatformArticle() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+          <h2 className="text-2xl md:text-5xl font-display font-bold mb-3 md:mb-4 text-foreground">
             Understanding a <span className="text-gradient-blue">Sophisticated</span> Trading Platform
           </h2>
-          <p className="text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground font-body max-w-2xl mx-auto leading-relaxed">
             In today's fast-paced financial markets, having access to a reliable trading platform is crucial. Our platform leverages multiple auxiliary trading systems to analyze stock market signals, enhancing efficiency and increasing consistent earnings.
           </p>
         </motion.div>
@@ -34,7 +34,7 @@ export default function TradingPlatformArticle() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-card rounded-2xl p-8 border border-border/50 mb-10 shadow-sm"
+          className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8 border border-border/50 mb-6 md:mb-10 shadow-sm"
         >
           <h3 className="text-2xl font-display font-bold text-foreground mb-3">
             What is <span className="text-gradient-blue">USDT</span>?

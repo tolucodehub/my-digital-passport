@@ -24,7 +24,7 @@ export default function Footer() {
       {/* Top gradient line */}
       <div className="h-1 bg-gradient-to-r from-primary via-accent to-primary" />
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Main footer */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand column */}

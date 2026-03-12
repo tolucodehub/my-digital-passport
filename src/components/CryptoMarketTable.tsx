@@ -73,29 +73,29 @@ function MiniChart({ positive }: { positive: boolean }) {
 
 export default function CryptoMarketTable() {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-24 relative">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Global Stats Bar */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-12"
         >
           {globalStats.map((stat, i) => (
             <motion.div
               key={stat.label}
               variants={fadeInUp}
               custom={i}
-              className="bg-card rounded-2xl p-5 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+              className="bg-card rounded-xl md:rounded-2xl p-4 md:p-5 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-2">
                 <stat.icon className="w-4 h-4 text-primary" />
                 <span className="text-xs text-muted-foreground font-body">{stat.label}</span>
               </div>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-display font-bold text-foreground">{stat.value}</span>
+                <span className="text-lg md:text-2xl font-display font-bold text-foreground">{stat.value}</span>
                 {stat.change && (
                   <span className={`text-xs font-medium ${stat.positive ? "text-emerald-500" : "text-destructive"}`}>
                     {stat.change}
@@ -112,12 +112,12 @@ export default function CryptoMarketTable() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <motion.h2 variants={fadeInUp} custom={0} className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+          <motion.h2 variants={fadeInUp} custom={0} className="text-2xl md:text-5xl font-display font-bold mb-3 md:mb-4 text-foreground">
             Today's Cryptocurrency <span className="text-gradient-blue">Prices</span>
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={1} className="text-muted-foreground font-body max-w-lg mx-auto">
+          <motion.p variants={fadeInUp} custom={1} className="text-sm md:text-base text-muted-foreground font-body max-w-lg mx-auto">
             Track real-time prices, market cap, volume, and trends for the top cryptocurrencies.
           </motion.p>
         </motion.div>
