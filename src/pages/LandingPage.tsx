@@ -284,7 +284,7 @@ export default function LandingPage() {
       {/* Trading Platform Article */}
       <TradingPlatformArticle />
 
-      {/* Payments */}
+      {/* Payments (kept for payment logos, deposit/withdraw section removed) */}
       <PaymentSection />
 
       {/* Testimonials */}
