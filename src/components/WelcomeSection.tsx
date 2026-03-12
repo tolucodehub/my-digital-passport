@@ -16,7 +16,7 @@ export default function WelcomeSection() {
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm text-primary font-body font-medium">Premier USDT Trading</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground leading-tight">
+            <h2 className="text-2xl md:text-5xl font-display font-bold mb-4 md:mb-6 text-foreground leading-tight">
               Welcome to Our <span className="text-gradient-blue">USDT Trading</span> Platform
             </h2>
             <p className="text-muted-foreground font-body text-lg leading-relaxed mb-6">

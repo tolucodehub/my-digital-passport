@@ -34,7 +34,7 @@ export default function TradingPlatformArticle() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-card rounded-2xl p-8 border border-border/50 mb-10 shadow-sm"
+          className="bg-card rounded-xl md:rounded-2xl p-5 md:p-8 border border-border/50 mb-6 md:mb-10 shadow-sm"
         >
           <h3 className="text-2xl font-display font-bold text-foreground mb-3">
             What is <span className="text-gradient-blue">USDT</span>?

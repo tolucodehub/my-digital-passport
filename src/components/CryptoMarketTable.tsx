@@ -117,7 +117,7 @@ export default function CryptoMarketTable() {
           <motion.h2 variants={fadeInUp} custom={0} className="text-2xl md:text-5xl font-display font-bold mb-3 md:mb-4 text-foreground">
             Today's Cryptocurrency <span className="text-gradient-blue">Prices</span>
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={1} className="text-muted-foreground font-body max-w-lg mx-auto">
+          <motion.p variants={fadeInUp} custom={1} className="text-sm md:text-base text-muted-foreground font-body max-w-lg mx-auto">
             Track real-time prices, market cap, volume, and trends for the top cryptocurrencies.
           </motion.p>
         </motion.div>

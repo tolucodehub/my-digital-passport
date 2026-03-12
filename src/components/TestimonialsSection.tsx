@@ -82,19 +82,19 @@ function ScrollRow({ items }: { items: typeof testimonials }) {
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 relative bg-secondary/50 overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section id="testimonials" className="py-12 md:py-24 relative bg-secondary/50 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="text-center mb-8 md:mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+          <h2 className="text-2xl md:text-5xl font-display font-bold mb-3 md:mb-4 text-foreground">
             Trusted by <span className="text-gradient-blue">Traders</span>
           </h2>
-          <p className="text-muted-foreground font-body max-w-lg mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground font-body max-w-lg mx-auto">
             Join over 150,000 traders who rely on CoinMarketCap every day.
           </p>
         </motion.div>
