@@ -195,6 +195,21 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Portfolio Showcase */}
+      <PortfolioShowcase />
+
+      {/* Easy Start */}
+      <EasyStartSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
+
+      {/* Trading Platform Article */}
+      <TradingPlatformArticle />
+
+      {/* Crypto Market Table */}
+      <CryptoMarketTable />
+
       {/* Features */}
       <section id="features" className="py-16 md:py-24 relative">
         <div className="container mx-auto px-4 md:px-6">
@@ -271,22 +286,6 @@ export default function LandingPage() {
 
       {/* Promo Banner */}
       <PromoBanner />
-
-      {/* Crypto Market Table */}
-      <CryptoMarketTable />
-
-      {/* Portfolio Showcase */}
-      <PortfolioShowcase />
-
-      {/* Easy Start */}
-      <EasyStartSection />
-
-      {/* Trading Platform Article */}
-      <TradingPlatformArticle />
-
-
-      {/* Testimonials */}
-      <TestimonialsSection />
 
       {/* FAQ */}
       <div id="faq">
