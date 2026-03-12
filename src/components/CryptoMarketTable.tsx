@@ -81,7 +81,7 @@ export default function CryptoMarketTable() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-12"
         >
           {globalStats.map((stat, i) => (
             <motion.div
