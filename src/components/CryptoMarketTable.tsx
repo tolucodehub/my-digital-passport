@@ -73,8 +73,8 @@ function MiniChart({ positive }: { positive: boolean }) {
 
 export default function CryptoMarketTable() {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section className="py-12 md:py-24 relative">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Global Stats Bar */}
         <motion.div
           initial="hidden"
