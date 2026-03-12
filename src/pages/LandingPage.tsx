@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp } from "lucide-react";
+import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp, Globe2 } from "lucide-react";
 import traderHero from "@/assets/trader-hero.png";
 import devicesShowcase from "@/assets/devices-showcase.png";
 import cmcLogo from "@/assets/cmc-logo.png";
@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
-import SocialTradingSection from "@/components/SocialTradingSection";
+import EasyStartSection from "@/components/EasyStartSection";
 import CryptoMarketTable from "@/components/CryptoMarketTable";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
 import WelcomeSection from "@/components/WelcomeSection";
@@ -39,10 +39,10 @@ const features = [
 ];
 
 const stats = [
-  { value: "$2.35T", label: "Total Market Cap" },
-  { value: "37K+", label: "Cryptocurrencies" },
+  { value: "34.7K+", label: "Total Users" },
+  { value: "$321.4M+", label: "Total Deposit" },
   { value: "928", label: "Exchanges" },
-  { value: "99.9%", label: "Uptime" },
+  { value: "1.23T+", label: "Total Withdrawal" },
 ];
 
 const ticker = ["BTC $68,240 ▲3.62%", "ETH $2,001 ▼3.01%", "BNB $636.85 ▼3.65%", "XRP $1.36 ▼1.43%", "SOL $185.67 ▼4.41%", "DOGE $0.0906 ▼1.34%", "ADA $0.2550 ▼1.68%", "DOT $4.32 ▲2.15%"];
@@ -70,11 +70,38 @@ export default function LandingPage() {
             <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Testimonials</a>
             <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">FAQ</a>
           </div>
-          <Link to="/register">
-            <Button variant="hero" size="sm" className="md:size-lg text-xs md:text-sm">
-              Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
-            </Button>
-          </Link>
+          <div className="flex items-center gap-2">
+            {/* Language Selector */}
+            <div className="relative group">
+              <button className="w-9 h-9 rounded-full flex items-center justify-center bg-secondary/80 hover:bg-primary/10 border border-border/50 hover:border-primary/30 transition-all duration-300">
+                <Globe2 className="w-4.5 h-4.5 text-muted-foreground group-hover:text-primary transition-colors" />
+              </button>
+              <div className="absolute right-0 top-full mt-2 w-44 bg-card border border-border/50 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+                {[
+                  { code: "en", label: "English" },
+                  { code: "es", label: "Español" },
+                  { code: "fr", label: "Français" },
+                  { code: "de", label: "Deutsch" },
+                  { code: "zh", label: "中文" },
+                  { code: "ar", label: "العربية" },
+                  { code: "pt", label: "Português" },
+                  { code: "ja", label: "日本語" },
+                ].map((lang) => (
+                  <button
+                    key={lang.code}
+                    className="w-full text-left px-4 py-2.5 text-sm font-body text-foreground hover:bg-primary/10 hover:text-primary transition-colors duration-200"
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <Link to="/register">
+              <Button variant="hero" size="sm" className="md:size-lg text-xs md:text-sm">
+                Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </motion.nav>
 
@@ -251,14 +278,12 @@ export default function LandingPage() {
       {/* Portfolio Showcase */}
       <PortfolioShowcase />
 
-      {/* Social Trading + Easy Start */}
-      <SocialTradingSection />
+      {/* Easy Start */}
+      <EasyStartSection />
 
       {/* Trading Platform Article */}
       <TradingPlatformArticle />
 
-      {/* Payments */}
-      <PaymentSection />
 
       {/* Testimonials */}
       <TestimonialsSection />
