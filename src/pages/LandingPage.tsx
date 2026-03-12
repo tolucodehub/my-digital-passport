@@ -8,8 +8,8 @@ import cmcLogo from "@/assets/cmc-logo.png";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
-
-
+import PaymentSection from "@/components/PaymentSection";
+import SocialTradingSection from "@/components/SocialTradingSection";
 import CryptoMarketTable from "@/components/CryptoMarketTable";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
 import WelcomeSection from "@/components/WelcomeSection";
@@ -251,10 +251,14 @@ export default function LandingPage() {
       {/* Portfolio Showcase */}
       <PortfolioShowcase />
 
+      {/* Social Trading + Easy Start */}
+      <SocialTradingSection />
 
       {/* Trading Platform Article */}
       <TradingPlatformArticle />
 
+      {/* Payments */}
+      <PaymentSection />
 
       {/* Testimonials */}
       <TestimonialsSection />
