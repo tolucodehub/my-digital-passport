@@ -112,7 +112,7 @@ export default function CryptoMarketTable() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
           <motion.h2 variants={fadeInUp} custom={0} className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
             Today's Cryptocurrency <span className="text-gradient-blue">Prices</span>
