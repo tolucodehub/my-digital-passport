@@ -88,7 +88,7 @@ export default function CryptoMarketTable() {
               key={stat.label}
               variants={fadeInUp}
               custom={i}
-              className="bg-card rounded-2xl p-5 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+              className="bg-card rounded-xl md:rounded-2xl p-4 md:p-5 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300"
             >
               <div className="flex items-center gap-2 mb-2">
                 <stat.icon className="w-4 h-4 text-primary" />
