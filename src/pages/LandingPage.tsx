@@ -71,34 +71,10 @@ export default function LandingPage() {
             <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Testimonials</a>
             <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">FAQ</a>
           </div>
-          <div className="flex items-center gap-2">
-            {/* Language Selector */}
-            <div className="relative group">
-              <button className="w-9 h-9 rounded-full flex items-center justify-center bg-secondary/80 hover:bg-primary/10 border border-border/50 hover:border-primary/30 transition-all duration-300">
-                <Globe2 className="w-4.5 h-4.5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </button>
-              <div className="absolute right-0 top-full mt-2 w-44 bg-card border border-border/50 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
-                {[
-                  { code: "en", label: "English" },
-                  { code: "es", label: "Español" },
-                  { code: "fr", label: "Français" },
-                  { code: "de", label: "Deutsch" },
-                  { code: "zh", label: "中文" },
-                  { code: "ar", label: "العربية" },
-                  { code: "pt", label: "Português" },
-                  { code: "ja", label: "日本語" },
-                ].map((lang) => (
-                  <button
-                    key={lang.code}
-                    className="w-full text-left px-4 py-2.5 text-sm font-body text-foreground hover:bg-primary/10 hover:text-primary transition-colors duration-200"
-                  >
-                    {lang.label}
-                  </button>
-                ))}
-              </div>
-            </div>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <LanguageSelector />
             <Link to="/register">
-              <Button variant="hero" size="sm" className="md:size-lg text-xs md:text-sm">
+              <Button variant="hero" size="sm" className="text-xs md:text-sm px-3 md:px-4">
                 Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
               </Button>
             </Link>
