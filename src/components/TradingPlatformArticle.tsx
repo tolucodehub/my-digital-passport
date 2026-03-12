@@ -11,8 +11,8 @@ const features = [
 
 export default function TradingPlatformArticle() {
   return (
-    <section className="py-24 relative bg-secondary/30">
-      <div className="container mx-auto px-6 max-w-5xl">
+    <section className="py-12 md:py-24 relative bg-secondary/30">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
