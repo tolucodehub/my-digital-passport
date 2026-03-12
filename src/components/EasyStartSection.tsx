@@ -47,7 +47,7 @@ const gettingStartedSteps = [
 
 export default function EasyStartSection() {
   return (
-    <section className="py-16 md:py-28 relative overflow-hidden bg-secondary/40">
+    <section className="py-12 md:py-28 relative overflow-hidden bg-secondary/40">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[500px] md:h-[800px] rounded-full bg-primary/3 blur-3xl pointer-events-none" />
@@ -59,16 +59,16 @@ export default function EasyStartSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={stagger}
-          className="text-center mb-12 md:mb-20"
+          className="text-center mb-8 md:mb-20"
         >
-          <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-5 border border-primary/20">
-            <CheckCircle2 className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary font-body font-medium">Simple. Fast. Rewarding.</span>
+          <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-5 border border-primary/20">
+            <CheckCircle2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+            <span className="text-xs md:text-sm text-primary font-body font-medium">Simple. Fast. Rewarding.</span>
           </motion.div>
-          <motion.h2 variants={fadeInUp} custom={1} className="text-3xl md:text-6xl font-display font-bold mb-4 md:mb-5 text-foreground">
+          <motion.h2 variants={fadeInUp} custom={1} className="text-2xl md:text-6xl font-display font-bold mb-3 md:mb-5 text-foreground">
             An Easy Way to <span className="text-gradient-blue">Start</span>
           </motion.h2>
-          <motion.p variants={fadeInUp} custom={2} className="text-muted-foreground font-body max-w-xl mx-auto text-lg">
+          <motion.p variants={fadeInUp} custom={2} className="text-sm md:text-lg text-muted-foreground font-body max-w-xl mx-auto">
             Your journey from complete beginner to confident investor has never been this straightforward.
           </motion.p>
         </motion.div>
