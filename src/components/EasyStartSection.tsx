@@ -121,11 +121,11 @@ export default function EasyStartSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="mt-8 md:mt-16 text-center"
         >
           <Link to="/register">
-            <Button variant="hero" size="lg" className="px-10 py-6 text-base">
-              Get Started for Free <ArrowRight className="w-5 h-5" />
+            <Button variant="hero" size="lg" className="px-6 py-4 md:px-10 md:py-6 text-sm md:text-base">
+              Get Started for Free <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
             </Button>
           </Link>
         </motion.div>
