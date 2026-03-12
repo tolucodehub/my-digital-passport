@@ -84,7 +84,7 @@ export default function EasyStartSection() {
           {/* Connecting line (desktop) */}
           <div className="hidden lg:block absolute top-[52px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 relative z-10">
             {gettingStartedSteps.map((item, i) => (
               <motion.div
                 key={item.title}
