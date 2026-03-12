@@ -255,8 +255,6 @@ export default function LandingPage() {
       {/* Trading Platform Article */}
       <TradingPlatformArticle />
 
-      {/* Payments */}
-      <PaymentSection />
 
       {/* Testimonials */}
       <TestimonialsSection />
