@@ -94,14 +94,14 @@ export default function EasyStartSection() {
                 className="flex flex-col items-center text-center group"
               >
                 {/* Icon circle */}
-                <div className="relative mb-6">
-                  <div className={`w-[104px] h-[104px] rounded-full bg-gradient-to-br ${item.color} p-0.5 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                <div className="relative mb-4 md:mb-6">
+                  <div className={`w-16 h-16 md:w-[104px] md:h-[104px] rounded-full bg-gradient-to-br ${item.color} p-0.5 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                     <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                      <item.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                      <item.icon className="w-5 h-5 md:w-8 md:h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
                   {/* Step badge */}
-                  <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-display font-bold flex items-center justify-center shadow-md">
+                  <span className="absolute -top-0.5 -right-0.5 md:-top-1 md:-right-1 w-5 h-5 md:w-7 md:h-7 rounded-full bg-primary text-primary-foreground text-[10px] md:text-xs font-display font-bold flex items-center justify-center shadow-md">
                     {i + 1}
                   </span>
                 </div>
