@@ -3,9 +3,9 @@ import { TrendingUp, ShieldCheck, Sparkles } from "lucide-react";
 
 export default function WelcomeSection() {
   return (
-    <section className="py-24 relative">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-12 md:py-24 relative">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
