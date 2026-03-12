@@ -106,10 +106,10 @@ export default function EasyStartSection() {
                   </span>
                 </div>
 
-                <h3 className="text-base font-display font-semibold text-foreground mb-2 leading-snug group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xs md:text-base font-display font-semibold text-foreground mb-1 md:mb-2 leading-snug group-hover:text-primary transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground font-body text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-muted-foreground font-body text-[10px] md:text-sm leading-relaxed hidden sm:block">{item.desc}</p>
               </motion.div>
             ))}
           </div>
