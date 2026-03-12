@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import PaymentSection from "@/components/PaymentSection";
-import SocialTradingSection from "@/components/SocialTradingSection";
+import EasyStartSection from "@/components/EasyStartSection";
 import CryptoMarketTable from "@/components/CryptoMarketTable";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
 import WelcomeSection from "@/components/WelcomeSection";
