@@ -114,7 +114,7 @@ export default function CryptoMarketTable() {
           variants={stagger}
           className="text-center mb-8 md:mb-12"
         >
-          <motion.h2 variants={fadeInUp} custom={0} className="text-4xl md:text-5xl font-display font-bold mb-4 text-foreground">
+          <motion.h2 variants={fadeInUp} custom={0} className="text-2xl md:text-5xl font-display font-bold mb-3 md:mb-4 text-foreground">
             Today's Cryptocurrency <span className="text-gradient-blue">Prices</span>
           </motion.h2>
           <motion.p variants={fadeInUp} custom={1} className="text-muted-foreground font-body max-w-lg mx-auto">
