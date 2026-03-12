@@ -39,10 +39,10 @@ const features = [
 ];
 
 const stats = [
-  { value: "$2.35T", label: "Total Market Cap" },
-  { value: "37K+", label: "Cryptocurrencies" },
+  { value: "34.7K+", label: "Total Users" },
+  { value: "$321.4M+", label: "Total Deposit" },
   { value: "928", label: "Exchanges" },
-  { value: "99.9%", label: "Uptime" },
+  { value: "1.23T+", label: "Total Withdrawal" },
 ];
 
 const ticker = ["BTC $68,240 ▲3.62%", "ETH $2,001 ▼3.01%", "BNB $636.85 ▼3.65%", "XRP $1.36 ▼1.43%", "SOL $185.67 ▼4.41%", "DOGE $0.0906 ▼1.34%", "ADA $0.2550 ▼1.68%", "DOT $4.32 ▲2.15%"];
