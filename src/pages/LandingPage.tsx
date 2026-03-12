@@ -8,7 +8,7 @@ import cmcLogo from "@/assets/cmc-logo.png";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
-import PaymentSection from "@/components/PaymentSection";
+
 
 import CryptoMarketTable from "@/components/CryptoMarketTable";
 import PortfolioShowcase from "@/components/PortfolioShowcase";
