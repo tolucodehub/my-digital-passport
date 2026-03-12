@@ -95,7 +95,7 @@ export default function CryptoMarketTable() {
                 <span className="text-xs text-muted-foreground font-body">{stat.label}</span>
               </div>
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-display font-bold text-foreground">{stat.value}</span>
+                <span className="text-lg md:text-2xl font-display font-bold text-foreground">{stat.value}</span>
                 {stat.change && (
                   <span className={`text-xs font-medium ${stat.positive ? "text-emerald-500" : "text-destructive"}`}>
                     {stat.change}
