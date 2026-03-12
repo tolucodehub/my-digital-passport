@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp, Globe2 } from "lucide-react";
+import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp } from "lucide-react";
 import traderHero from "@/assets/trader-hero.png";
 import devicesShowcase from "@/assets/devices-showcase.png";
 import cmcLogo from "@/assets/cmc-logo.png";
