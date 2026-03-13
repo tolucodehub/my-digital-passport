@@ -28,7 +28,7 @@ const countries = [
   "Sweden", "Norway", "Denmark", "New Zealand", "Ireland", "Other",
 ];
 
-const idTypes = ["National ID", "International Passport", "Driver's License"];
+
 
 const fadeVariant = {
   hidden: { opacity: 0, x: 30 },
