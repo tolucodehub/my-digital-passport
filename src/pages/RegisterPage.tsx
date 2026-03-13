@@ -173,8 +173,8 @@ export default function RegisterPage() {
           <div className="lg:hidden flex items-center gap-2 mb-8">
             <Link to="/" className="flex items-center gap-2">
               <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
-              <span className="font-display text-xl font-bold text-foreground">
-                Coin<span className="text-gradient-gold">MarketCap</span>
+              <span className="font-display text-xl font-bold text-primary">
+                CoinMarketCap
               </span>
             </Link>
           </div>
