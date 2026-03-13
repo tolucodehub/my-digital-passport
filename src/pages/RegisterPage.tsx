@@ -28,7 +28,7 @@ const countries = [
   "Sweden", "Norway", "Denmark", "New Zealand", "Ireland", "Other",
 ];
 
-const idTypes = ["National ID", "International Passport", "Driver's License"];
+
 
 const fadeVariant = {
   hidden: { opacity: 0, x: 30 },
@@ -52,8 +52,6 @@ export default function RegisterPage() {
     address: "",
     city: "",
     zipCode: "",
-    idType: "",
-    idNumber: "",
     image: null as File | null,
   });
 
@@ -135,8 +133,8 @@ export default function RegisterPage() {
         >
           <Link to="/" className="flex items-center gap-2 mb-12">
             <img src={cmcLogo} alt="CoinMarketCap" className="w-10 h-10 rounded-lg object-contain" />
-            <span className="font-display text-2xl font-bold text-foreground">
-              Coin<span className="text-gradient-gold">MarketCap</span>
+            <span className="font-display text-2xl font-bold text-primary">
+              CoinMarketCap
             </span>
           </Link>
           <h2 className="text-4xl font-display font-bold mb-6 leading-tight">
@@ -173,8 +171,8 @@ export default function RegisterPage() {
           <div className="lg:hidden flex items-center gap-2 mb-8">
             <Link to="/" className="flex items-center gap-2">
               <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
-              <span className="font-display text-xl font-bold text-foreground">
-                Coin<span className="text-gradient-gold">MarketCap</span>
+              <span className="font-display text-xl font-bold text-primary">
+                CoinMarketCap
               </span>
             </Link>
           </div>
@@ -317,37 +315,10 @@ export default function RegisterPage() {
                 <motion.div key="step3" variants={fadeVariant} initial="hidden" animate="visible" exit="exit" className="space-y-5">
                   <div className="flex items-center gap-2 mb-2 text-primary">
                     <FileText className="w-5 h-5" />
-                    <span className="font-display font-semibold">Identification</span>
+                    <span className="font-display font-semibold">Passport Upload</span>
                   </div>
                   <div>
-                    <Label className="text-foreground/80 font-body text-sm mb-2 block">ID Type *</Label>
-                    <div className="relative">
-                      <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground z-10" />
-                      <select
-                        required
-                        value={form.idType}
-                        onChange={(e) => updateField("idType", e.target.value)}
-                        className="w-full h-12 pl-10 pr-4 bg-secondary border border-border rounded-lg text-foreground font-body text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary appearance-none"
-                      >
-                        <option value="">Select ID type</option>
-                        {idTypes.map((t) => (
-                          <option key={t} value={t}>{t}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  <div>
-                    <Label className="text-foreground/80 font-body text-sm mb-2 block">ID Number *</Label>
-                    <Input
-                      required
-                      value={form.idNumber}
-                      onChange={(e) => updateField("idNumber", e.target.value)}
-                      placeholder="Enter your ID number"
-                      className="bg-secondary border-border focus:border-primary h-12"
-                    />
-                  </div>
-                  <div>
-                    <Label className="text-foreground/80 font-body text-sm mb-2 block">Upload ID Photo * (max 5MB)</Label>
+                    <Label className="text-foreground/80 font-body text-sm mb-2 block">Upload Personal Passport * (max 5MB)</Label>
                     <div
                       onClick={() => fileRef.current?.click()}
                       className="glass-card rounded-xl border-2 border-dashed border-border hover:border-primary/50 transition-colors cursor-pointer p-8 text-center"
@@ -366,7 +337,7 @@ export default function RegisterPage() {
                       ) : (
                         <>
                           <Upload className="w-10 h-10 text-muted-foreground mx-auto mb-3" />
-                          <p className="text-sm text-muted-foreground font-body">Click to upload your ID photo</p>
+                          <p className="text-sm text-muted-foreground font-body">Click to upload your personal passport</p>
                           <p className="text-xs text-muted-foreground/60 font-body mt-1">JPG, PNG up to 5MB</p>
                         </>
                       )}

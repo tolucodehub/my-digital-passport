@@ -61,8 +61,8 @@ export default function LandingPage() {
         <div className="container mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-6">
           <div className="flex items-center gap-2">
             <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
-            <span className="font-display text-xl font-bold text-foreground">
-              Coin<span className="text-gradient-blue">MarketCap</span>
+            <span className="font-display text-xl font-bold text-primary">
+              CoinMarketCap
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8">

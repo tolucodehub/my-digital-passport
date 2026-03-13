@@ -8,24 +8,16 @@ const faqs = [
     a: "Opening an account takes just 3 minutes. Click 'Open Account', fill in your personal details, upload a valid ID, and you're ready to trade. Our team reviews applications within 24 hours.",
   },
   {
-    q: "What are the minimum deposit requirements?",
-    a: "You can start trading with as little as $50. We accept bank transfers, credit/debit cards, and popular e-wallets. All deposits are processed instantly for most payment methods.",
-  },
-  {
     q: "Is my money safe with CoinMarketCap?",
     a: "Absolutely. Client funds are held in segregated accounts at tier-1 banks. We use military-grade encryption and are fully regulated. Your funds are protected up to $500,000 under our insurance policy.",
   },
   {
     q: "What instruments can I trade?",
-    a: "CoinMarketCap offers 200+ instruments including Forex pairs, CFDs on stocks, commodities (gold, oil, silver), indices (S&P 500, NASDAQ), and popular cryptocurrencies — all from a single account.",
+    a: "USDT (Tether) is the leading stablecoin, a type of Stock designed to maintain a 1:1 peg with the U.S. dollar. It provides a stable, low-volatility store of value within the crypto market, used for trading, remittances, and hedging. USDT is issued by Tether Limited and operates across multiple blockchains.",
   },
   {
     q: "How fast are withdrawals processed?",
     a: "We pride ourselves on fast withdrawals. E-wallet withdrawals are processed within 2 hours, while bank transfers take 1-3 business days. There are no hidden fees on withdrawals.",
-  },
-  {
-    q: "Do you offer a demo account?",
-    a: "Yes! Every new user gets a free demo account with $100,000 in virtual funds. Practice your strategies risk-free with real market conditions before going live.",
   },
 ];
 

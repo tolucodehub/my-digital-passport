@@ -31,8 +31,8 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-5">
               <img src={cmcLogo} alt="CoinMarketCap" className="w-9 h-9 rounded-lg object-contain" />
-              <span className="font-display text-xl font-bold">
-                Coin<span className="text-primary">MarketCap</span>
+              <span className="font-display text-xl font-bold text-primary">
+                CoinMarketCap
               </span>
             </div>
             <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6 max-w-xs">
