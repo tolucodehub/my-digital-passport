@@ -52,8 +52,6 @@ export default function RegisterPage() {
     address: "",
     city: "",
     zipCode: "",
-    idType: "",
-    idNumber: "",
     image: null as File | null,
   });
 
