@@ -337,7 +337,7 @@ export default function RegisterPage() {
                       ) : (
                         <>
                           <Upload className="w-10 h-10 text-muted-foreground mx-auto mb-3" />
-                          <p className="text-sm text-muted-foreground font-body">Click to upload your ID photo</p>
+                          <p className="text-sm text-muted-foreground font-body">Click to upload your personal passport</p>
                           <p className="text-xs text-muted-foreground/60 font-body mt-1">JPG, PNG up to 5MB</p>
                         </>
                       )}
