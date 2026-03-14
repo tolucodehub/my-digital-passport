@@ -121,6 +121,7 @@ export default function RegisterPage() {
         setSubmitError(data.error || `Request failed (${res.status})`);
         return;
       }
+      console.log("[Register] Notification email sent successfully for:", form.email);
       setSubmitted(true);
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : "Failed to submit");

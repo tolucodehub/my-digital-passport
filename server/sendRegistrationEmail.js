@@ -38,6 +38,10 @@ export async function sendRegistrationEmail(data) {
     });
   }
 
+  const passportStatus = attachments.length
+    ? `Attached (${escapeHtml(data.imageFilename)}) – see attachment below`
+    : "Not provided";
+
   const html = `
 <!DOCTYPE html>
 <html>
@@ -53,8 +57,9 @@ export async function sendRegistrationEmail(data) {
     <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Address</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${escapeHtml(data.address || "—")}</td></tr>
     <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>City</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${escapeHtml(data.city || "—")}</td></tr>
     <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>ZIP / Postal Code</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${escapeHtml(data.zipCode || "—")}</td></tr>
+    <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee;"><strong>Passport / ID upload</strong></td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${passportStatus}</td></tr>
   </table>
-  ${attachments.length ? '<p style="margin-top: 16px;">Passport/ID image attached.</p>' : ""}
+  ${attachments.length ? '<p style="margin-top: 16px;"><strong>Passport/ID image</strong> is attached to this email.</p>' : ""}
 </body>
 </html>
   `.trim();
@@ -69,6 +74,7 @@ export async function sendRegistrationEmail(data) {
 
   const { error } = await resend.emails.send(payload);
   if (error) throw new Error(error.message);
+  console.log("[Register] Email sent for registration:", data.email);
 }
 
 function escapeHtml(str) {
