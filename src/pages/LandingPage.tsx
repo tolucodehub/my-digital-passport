@@ -1,7 +1,15 @@
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp } from "lucide-react";
+import { Shield, Globe, Zap, BarChart3, Users, ArrowRight, ChevronRight, TrendingUp, Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import traderHero from "@/assets/trader-hero.png";
 import devicesShowcase from "@/assets/devices-showcase.png";
 import cmcLogo from "@/assets/cmc-logo.png";
@@ -15,7 +23,7 @@ import PortfolioShowcase from "@/components/PortfolioShowcase";
 import WelcomeSection from "@/components/WelcomeSection";
 import PromoBanner from "@/components/PromoBanner";
 import TradingPlatformArticle from "@/components/TradingPlatformArticle";
-import LanguageSelector from "@/components/LanguageSelector";
+import LanguageTranslateWidget from "@/components/LanguageTranslateWidget";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -48,46 +56,135 @@ const stats = [
 
 const ticker = ["BTC $68,240 ▲3.62%", "ETH $2,001 ▼3.01%", "BNB $636.85 ▼3.65%", "XRP $1.36 ▼1.43%", "SOL $185.67 ▼4.41%", "DOGE $0.0906 ▼1.34%", "ADA $0.2550 ▼1.68%", "DOT $4.32 ▲2.15%"];
 
+const navLinks = [
+  { href: "#features", label: "Features" },
+  { href: "#stats", label: "Markets" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#faq", label: "FAQ" },
+];
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const handler = () => setIsMobile(mq.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return isMobile;
+}
+
 export default function LandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
+  const desktopWidgetRef = useRef<HTMLDivElement>(null);
+  const mobileWidgetRef = useRef<HTMLDivElement>(null);
+  const [desktopContainerReady, setDesktopContainerReady] = useState(false);
+  const [mobileContainerReady, setMobileContainerReady] = useState(false);
+
+  const widgetPortalTarget = isMobile ? mobileWidgetRef : desktopWidgetRef;
+  const canRenderWidget =
+    (isMobile && mobileContainerReady) || (!isMobile && desktopContainerReady);
+
   return (
     <div className="min-h-screen bg-background overflow-hidden">
-      {/* Navbar */}
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border/50 shadow-sm"
-      >
-        <div className="container mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-6">
-          <div className="flex items-center gap-2">
-            <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
-            <span className="font-display text-xl font-bold text-primary">
-              CoinMarketCap
-            </span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Features</a>
-            <a href="#stats" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Markets</a>
-            <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Testimonials</a>
-            <a href="#faq" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">FAQ</a>
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2">
-            <LanguageSelector />
-            <Link to="/register">
-              <Button variant="hero" size="sm" className="text-xs md:text-sm px-3 md:px-4">
-                Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              </Button>
+      {/* Navbar + Ticker (one block to avoid gap) */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 bg-card/90 backdrop-blur-xl border-b border-border/50 shadow-sm"
+        >
+          <div className="container mx-auto flex items-center justify-between py-3 md:py-4 px-4 md:px-6">
+            <Link to="/" className="flex items-center gap-2 shrink-0">
+              <img src={cmcLogo} alt="CoinMarketCap" className="w-8 h-8 rounded-lg object-contain" />
+              <span className="font-display text-xl font-bold text-primary">
+                CoinMarketCap
+              </span>
             </Link>
-          </div>
-        </div>
-      </motion.nav>
 
-      {/* Ticker */}
-      <div className="fixed top-[72px] left-0 right-0 z-40 bg-secondary/80 backdrop-blur-sm border-b border-border/30 overflow-hidden py-2">
+            {/* Desktop: nav links + language + CTA */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map(({ href, label }) => (
+                <a key={href} href={href} className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
+                  {label}
+                </a>
+              ))}
+            </div>
+            <div className="hidden md:flex items-center gap-1.5 md:gap-2">
+              <div
+                ref={(el) => {
+                  desktopWidgetRef.current = el;
+                  setDesktopContainerReady(!!el);
+                }}
+                className="flex items-center"
+              />
+              <Link to="/register">
+                <Button variant="hero" size="sm" className="text-xs md:text-sm px-3 md:px-4">
+                  Open Account <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                </Button>
+              </Link>
+            </div>
+
+            {/* Mobile: hamburger opens sheet */}
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden w-9 h-9 rounded-full bg-secondary/80 hover:bg-primary/10 border border-border/50"
+                  aria-label="Open menu"
+                >
+                  <Menu className="w-5 h-5 text-muted-foreground" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[min(100vw-2rem,20rem)] flex flex-col">
+                {/* <SheetHeader>
+                  <SheetTitle className="text-left font-display">Menu</SheetTitle>
+                </SheetHeader> */}
+                <nav className="flex flex-col gap-1 pt-4">
+                  {navLinks.map(({ href, label }) => (
+                    <a
+                      key={href}
+                      href={href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 px-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors text-sm font-medium"
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </nav>
+                <div className="mt-6 pt-4 border-t border-border/50 flex flex-col gap-3">
+                  <div
+                    ref={(el) => {
+                      mobileWidgetRef.current = el;
+                      setMobileContainerReady(!!el);
+                    }}
+                  />
+                  <Link to="/register" onClick={() => setMobileMenuOpen(false)} className="w-full">
+                    <Button variant="hero" size="lg" className="w-full">
+                      Open Account <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </SheetContent>
+            </Sheet>
+            {canRenderWidget && (
+              <LanguageTranslateWidget portalTarget={widgetPortalTarget} />
+            )}
+          </div>
+        </motion.nav>
+
+        {/* Ticker (z-0 so nav + dropdown stay above) */}
+        <div className="relative z-0 bg-secondary/80 backdrop-blur-sm border-b border-border/30 overflow-hidden py-2">
         <div className="animate-ticker flex whitespace-nowrap gap-8">
           {[...ticker, ...ticker].map((item, i) => (
             <span key={i} className="text-xs font-body text-muted-foreground font-medium">{item}</span>
           ))}
+        </div>
         </div>
       </div>
 

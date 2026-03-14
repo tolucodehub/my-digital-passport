@@ -1,56 +1,115 @@
-import { useState, useRef, useEffect } from "react";
-import { Globe2, Check } from "lucide-react";
+import { useEffect, useCallback } from "react";
+import { Globe2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+
+/** Map our language codes to Google Translate combo values (e.g. zh -> zh-CN) */
+const GOOGLE_LANG_CODE: Record<string, string> = {
+  en: "en",
+  es: "es",
+  fr: "fr",
+  de: "de",
+  zh: "zh-CN",
+  ar: "ar",
+  pt: "pt",
+  ja: "ja",
+};
+
+function getGoogleTranslateCombo(): HTMLSelectElement | null {
+  return document.querySelector(".goog-te-combo");
+}
+
+/** Trigger Google Translate to the given language code (our code, e.g. "en" | "zh"). */
+export function triggerGoogleTranslate(langCode: string) {
+  const googleCode = GOOGLE_LANG_CODE[langCode] ?? langCode;
+  const combo = getGoogleTranslateCombo();
+  if (!combo) return;
+  if (combo.value === googleCode) return;
+  combo.value = googleCode;
+  combo.dispatchEvent(new Event("change", { bubbles: true }));
+}
+
+/** Read current language from Google Translate cookie so UI can show selection. */
+function getGoogleTranslateCookieLang(): string | null {
+  const match = document.cookie.match(/googtrans=\/[^/]+\/([^;]+)/);
+  return match ? match[1] : null;
+}
+
+/** Map Google cookie value back to our code (e.g. zh-CN -> zh). */
+const COOKIE_TO_OUR_CODE: Record<string, string> = {
+  en: "en",
+  es: "es",
+  fr: "fr",
+  de: "de",
+  "zh-CN": "zh",
+  "zh-TW": "zh",
+  ar: "ar",
+  pt: "pt",
+  ja: "ja",
+};
 
 export default function LanguageSelector() {
   const { language, setLanguage, languages } = useLanguage();
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+
+  // Sync our state from Google's cookie on mount and when cookie might change
+  const syncFromCookie = useCallback(() => {
+    const cookieLang = getGoogleTranslateCookieLang();
+    const ourCode = cookieLang ? COOKIE_TO_OUR_CODE[cookieLang] ?? cookieLang : null;
+    if (ourCode && languages.some((l) => l.code === ourCode)) {
+      setLanguage(ourCode as Parameters<typeof setLanguage>[0]);
+    }
+  }, [languages, setLanguage]);
 
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
+    syncFromCookie();
+    // Google Translate may load later; poll briefly for combo then sync
+    const t = setInterval(() => {
+      if (getGoogleTranslateCombo()) {
+        syncFromCookie();
+        clearInterval(t);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    }, 200);
+    return () => clearInterval(t);
+  }, [syncFromCookie]);
 
-  const currentLang = languages.find((l) => l.code === language);
+  const handleSelect = (code: string) => {
+    setLanguage(code as Parameters<typeof setLanguage>[0]);
+    triggerGoogleTranslate(code);
+  };
 
   return (
-    <div className="relative" ref={ref}>
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center bg-secondary/80 hover:bg-primary/10 border border-border/50 hover:border-primary/30 transition-all duration-300"
-        aria-label="Select language"
-      >
-        <Globe2 className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
-      </button>
-
-      {open && (
-        <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border/50 rounded-xl shadow-xl z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-secondary/80 hover:bg-primary/10 border border-border/50 hover:border-primary/30"
+          aria-label="Select language"
+        >
+          <Globe2 className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" sideOffset={8} className="min-w-[11rem] z-[100] rounded-xl border-border/50">
+        <DropdownMenuRadioGroup value={language} onValueChange={handleSelect}>
           {languages.map((lang) => (
-            <button
+            <DropdownMenuRadioItem
               key={lang.code}
-              onClick={() => {
-                setLanguage(lang.code);
-                setOpen(false);
-              }}
-              className="w-full text-left px-4 py-2.5 text-sm font-body text-foreground hover:bg-primary/10 hover:text-primary transition-colors duration-200 flex items-center justify-between gap-2"
+              value={lang.code}
+              className="flex items-center gap-2 cursor-pointer py-2.5 pl-8 pr-3 font-body"
             >
-              <span className="flex items-center gap-2">
-                <span className="text-base">{lang.flag}</span>
-                {lang.label}
-              </span>
-              {language === lang.code && (
-                <Check className="w-3.5 h-3.5 text-primary" />
-              )}
-            </button>
+              <span className="text-base">{lang.flag}</span>
+              <span>{lang.label}</span>
+            </DropdownMenuRadioItem>
           ))}
-        </div>
-      )}
-    </div>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
