@@ -83,10 +83,64 @@ export default function RegisterPage() {
     if (fileRef.current) fileRef.current.value = "";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      let imageBase64: string | undefined;
+      let imageFilename: string | undefined;
+      if (form.image) {
+        imageBase64 = await fileToBase64(form.image);
+        imageFilename = form.image.name;
+      }
+
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          dateOfBirth: form.dateOfBirth,
+          country: form.country,
+          address: form.address,
+          city: form.city,
+          zipCode: form.zipCode,
+          ...(imageBase64 && { imageBase64, imageFilename }),
+        }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setSubmitError(data.error || `Request failed (${res.status})`);
+        return;
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "Failed to submit");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  function fileToBase64(file: File): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const result = reader.result as string;
+        const base64 = result.includes(",") ? result.split(",")[1] : result;
+        resolve(base64 ?? "");
+      };
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
+  }
 
   const totalSteps = 3;
 
@@ -355,10 +409,14 @@ export default function RegisterPage() {
               )}
             </AnimatePresence>
 
+            {submitError && (
+              <p className="text-destructive text-sm font-body mt-4">{submitError}</p>
+            )}
+
             {/* Navigation */}
             <div className="flex justify-between mt-10">
               {step > 1 ? (
-                <Button type="button" variant="ghost" onClick={() => setStep(step - 1)} className="text-muted-foreground">
+                <Button type="button" variant="ghost" onClick={() => setStep(step - 1)} className="text-muted-foreground" disabled={isSubmitting}>
                   <ArrowLeft className="w-4 h-4 mr-2" /> Back
                 </Button>
               ) : (
@@ -369,8 +427,8 @@ export default function RegisterPage() {
                   Continue <ArrowRight className="w-4 h-4" />
                 </Button>
               ) : (
-                <Button type="submit" variant="hero" size="lg">
-                  Submit Registration <ArrowRight className="w-4 h-4" />
+                <Button type="submit" variant="hero" size="lg" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending…" : "Submit Registration"} <ArrowRight className="w-4 h-4" />
                 </Button>
               )}
             </div>
