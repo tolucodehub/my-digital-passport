@@ -145,6 +145,12 @@ export default function RegisterPage() {
 
   const totalSteps = 3;
 
+  const isStep1Valid =
+    form.fullName.trim() !== "" &&
+    form.email.trim() !== "" &&
+    form.phone.trim() !== "" &&
+    form.dateOfBirth !== "";
+
   if (submitted) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-6">
@@ -424,7 +430,13 @@ export default function RegisterPage() {
                 <div />
               )}
               {step < totalSteps ? (
-                <Button type="button" variant="hero" onClick={() => setStep(step + 1)}>
+                <Button
+                  type="button"
+                  variant="hero"
+                  onClick={() => setStep(step + 1)}
+                  disabled={step === 1 && !isStep1Valid}
+                  title={step === 1 && !isStep1Valid ? "Please fill all required fields" : undefined}
+                >
                   Continue <ArrowRight className="w-4 h-4" />
                 </Button>
               ) : (
